@@ -2,17 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## クローンしてみよう
+0. 必要なツールがあるか確認
+    ```
+    $ node -v
+    $ npx -v
+    $ npm -v
+    ```
 
-In the project directory, you can run:
+1. VSCodeでターミナルを開く\
+(ホームディレクトリにいることを確認しよう)
+
+2. 以下のコードを順々に実行する
+    ```
+    $ git clone https://github.com/igem-tsukuba/web.git
+    $ cd web
+    ```
+
+3. 以下のコードを実行して、ブラウザに表示されるか確かめる
+    ```
+    $ npm start
+    ```
+
+4. プレビューを終わらせる時は、ブラウザのタブを閉じ、Ctrl + Cでプレビューを終了する
+
+## 使えるスクリプト
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+アプリケーションを開発者モードで開くよ\
+ブラウザに [http://localhost:3000](http://localhost:3000) というURLで開くよ
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+ホットスタートなので、VSCodeでコードを書き換えるたびに画面の表示が変わったりエラーが出たりするよ
 
 ### `npm test`
 
