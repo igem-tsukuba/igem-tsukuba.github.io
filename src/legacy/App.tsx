@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from '../componets/button/Button';
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         >
           Learn React
         </a>
+        <Button
+          label = 'iGEM'
+          textColor = 'red'
+          link = 'https://google.com' />
       </header>
     </div>
   );
