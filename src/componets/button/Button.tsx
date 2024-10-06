@@ -17,9 +17,9 @@ const Button: React.FC<ButtonProps> = ({
         style={{
             color: textColor,
             backgroundColor: '#FFFFFF',
-            padding: '10px 20px',
-            border: '5px ${textColor}',
-            borderRadius: '10px',
+            padding: '7px 12px',
+            border: `3px solid ${textColor}`,
+            borderRadius: '15px',
             fontFamily: 'Noto Sans JP',
             cursor: 'pointer',
         }}
