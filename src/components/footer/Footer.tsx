@@ -1,6 +1,12 @@
 import React from 'react';
-import '../../../public/components/footer/Instagram_Glyph_White.png'
-import '../../../public/components/footer/icon_mail.png'
-import '../../../public/components/footer/logo-white.png'
 
-//const Footer
+const Footer:React.FC =()=> {
+    return(
+        <footer style={{color: 'white', backgroundColor: '#691C70', padding: '36px'}}>
+            <p>こんにちは</p>
+
+        </footer>
+    );
+};
+
+export default Footer;
