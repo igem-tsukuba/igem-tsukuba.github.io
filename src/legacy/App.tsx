@@ -19,7 +19,6 @@ function App() {
         >
           Learn React
         </a>
-        <Footer />
 
       </header>
     </div>
