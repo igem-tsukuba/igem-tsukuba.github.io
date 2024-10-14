@@ -24,9 +24,30 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
         setIsHovered(false);
     };
     return(
-        <button style={{width: "240px", height: "100px"}}>
-            <p> {bigTabName_ja} </p>
-            <p> {bigTabName_en} </p>
+        <button style={{
+            width: "240px",
+            height: "100px",
+            borderBottom: `10px solid ${categoryColor}`,
+            borderTop: "none",
+            borderLeft: "none",
+            borderRight: "none"
+            }}>
+            <p style={{
+                fontFamily: "Noto Sans JP",
+                fontWeight: "600",
+                fontSize: "24pt",
+                margin: "0px"
+                }}>
+                {bigTabName_ja}
+            </p>
+            <p style={{
+                fontFamily: "Noto Sans JP",
+                fontWeight: "600",
+                fontSize: "16pt",
+                margin: "0px"
+            }}>
+                {bigTabName_en}
+            </p>
         </button>
     )
 };
