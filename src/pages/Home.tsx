@@ -1,9 +1,13 @@
 import React from 'react';
+import Footer from '../components/footer/Footer';
 
 
 const Home: React.FC = () => {
     return (
-        <p>WIP</p>
+        <div>
+            <p>WIP</p>
+            <Footer />
+        </div>
     );
 }
 
