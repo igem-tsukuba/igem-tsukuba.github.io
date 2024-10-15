@@ -2,32 +2,30 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutIGEM from './pages/about_us/About_iGEM';
-import logo from './logo.svg';
-import './App.css';
+import AboutSymBio from './pages/about_us/About_Symbio';
+import AboutIGEMTSUKUBA from './pages/about_us/About_IGEM_TSUKUBA';
+import Project from './pages/about_us/Project';
+import Log from './pages/about_us/Log';
+import Members from './pages/about_us/Members';
+import News from './pages/News';
+import Recruitment from './pages/Recruitment';
+import Sponsorship from './pages/Sponsorship'
 
 const App: React.FC = () => {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<AboutIGEM />} />
+          <Route path="/about/about_iGEM" element={<AboutIGEM />} />
+          <Route path="/about/about_symbio" element={<AboutSymBio />} />
+          <Route path="/about/about_iGEM_TSUKUBA" element={<AboutIGEMTSUKUBA />} />
+          <Route path="/about/project" element={<Project />} />
+          <Route path="/about/log" element={<Log />} />
+          <Route path="/about/members" element={<Members />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/recruitment" element={<Recruitment />} />
+          <Route path="/Sponsorship" element={<Sponsorship />} />
         </Routes>
-      </div>
     </Router>
   );
 }
