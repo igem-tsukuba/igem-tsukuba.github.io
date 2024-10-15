@@ -5,24 +5,38 @@ type HeaderMiniMenuProps = {
     bigTabName_ja: string;
     bigTabName_en: string;
     bigTabURL: string;
-    numberOfSmallTabs: number;
-    smallTabName?: string[];
-    smallTabURL?: string[];
+    smallTabNames: string[];
+    smallTabURLs: string[];
 }
 
-const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabName_ja, bigTabName_en, bigTabURL, numberOfSmallTabs, smallTabName, smallTabURL}) => {
-    const [isHovered, setIsHovered] = useState(false);
+const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabName_ja, bigTabName_en, bigTabURL, smallTabNames, smallTabURLs}) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const handleClick = () =>{
-        window.location.href = bigTabURL;
-    };
-    const handleMouseEnter = () => {
-        setIsHovered(true);
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
     };
 
-    const handleMouseLeave = () => {
-        setIsHovered(false);
+    const handleItemClick = (index: number) => {
+        setSelectedIndex(index);
+        setIsOpen(false);
     };
+
+    const handleExternalLinkClick = () => {
+        if (externalLink) {
+        window.location.href = externalLink;
+        }
+    };
+
+    if (items.length === 0 && externalLink) {
+        return (
+        <button className="external-link-button" onClick={handleExternalLinkClick}>
+            {externalLinkLabel || 'Visit External Site'}
+        </button>
+        );
+    }
+
+    
     return(
         <button style={{
             width: "240px",
