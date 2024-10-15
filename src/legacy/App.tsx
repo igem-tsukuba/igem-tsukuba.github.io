@@ -19,7 +19,10 @@ function App() {
         >
           Learn React
         </a>
-        <HeaderMiniMenu categoryColor="green" bigTabName_ja='協賛のお願い' bigTabName_en='Recruitment' bigTabURL='https://google.com' smallTabNames={[]} smallTabURLs={[]}/>
+        <HeaderMiniMenu categoryColor="green" bigTabName_ja='協賛のお願い' bigTabName_en='Recruitment' bigTabURL='https://google.com' smallTab={[[{
+          smallTabLabels: ['ググレカス'], smallTabURLs: ['https://google.com'],
+          content: undefined
+        }]]} />
       </header>
     </div>
   );
