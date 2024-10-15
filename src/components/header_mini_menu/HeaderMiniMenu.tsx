@@ -1,69 +1,65 @@
 import React, { useState } from 'react';
 
+type SmallTabProps = {
+    smallTabLabels: string[];
+    smallTabURLs: string[];
+    content: React.ReactNode;
+}
+
 type HeaderMiniMenuProps = {
     categoryColor: string;
     bigTabName_ja: string;
     bigTabName_en: string;
     bigTabURL: string;
-    smallTabNames: string[];
-    smallTabURLs: string[];
+    smallTab: SmallTabProps[][];
 }
 
-const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabName_ja, bigTabName_en, bigTabURL, smallTabNames, smallTabURLs}) => {
+const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabName_ja, bigTabName_en, bigTabURL, smallTab }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [selectedIndex, setSelectedIndex] = useState([0, 0]);
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
-    const handleItemClick = (index: number) => {
-        setSelectedIndex(index);
+    const handleItemClick = (rowIndex: number, colIndex: number) => {
+        setSelectedIndex([rowIndex, colIndex]);
         setIsOpen(false);
     };
 
-    const handleExternalLinkClick = () => {
-        if (externalLink) {
-        window.location.href = externalLink;
-        }
-    };
+    // smallTabの各行のsmallTabLabelsの要素数がすべて0であるかをチェック
+    const allSmallTabsEmpty = smallTab.every(row => row.every(tab => tab.smallTabLabels.length === 0));
 
-    if (items.length === 0 && externalLink) {
+    if (allSmallTabsEmpty && bigTabURL) {
         return (
-        <button className="external-link-button" onClick={handleExternalLinkClick}>
-            {externalLinkLabel || 'Visit External Site'}
-        </button>
+            <a href={bigTabURL} style={{ backgroundColor: "white" }}>
+                <span>{bigTabName_ja}</span>
+                <span>{bigTabName_en}</span>
+            </a>
         );
     }
 
-    
-    return(
-        <button style={{
-            width: "240px",
-            height: "100px",
-            borderBottom: `10px solid ${categoryColor}`,
-            borderTop: "none",
-            borderLeft: "none",
-            borderRight: "none"
-            }}>
-            <p style={{
-                fontFamily: "Noto Sans JP",
-                fontWeight: "600",
-                fontSize: "24pt",
-                margin: "0px"
-                }}>
-                {bigTabName_ja}
-            </p>
-            <p style={{
-                fontFamily: "Noto Sans JP",
-                fontWeight: "600",
-                fontSize: "16pt",
-                margin: "0px"
-            }}>
-                {bigTabName_en}
-            </p>
-        </button>
-    )
+    return (
+        <div>
+            <div onClick={toggleMenu} style={{ backgroundColor: categoryColor }}>
+                <span>{bigTabName_ja}</span>
+                <span>{bigTabName_en}</span>
+            </div>
+            {isOpen && (
+                <div>
+                    {smallTab.map((row, rowIndex) => (
+                        <div key={rowIndex}>
+                            {row.map((tab, colIndex) => (
+                                <div key={colIndex} onClick={() => handleItemClick(rowIndex, colIndex)}>
+                                    <a href={tab.smallTabURLs[colIndex]}>{tab.smallTabLabels[colIndex]}</a>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            )}
+        </div>
+    );
 };
 
 export default HeaderMiniMenu;
