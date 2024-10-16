@@ -8,7 +8,7 @@ const Home: React.FC = () => {
     return (
         <div>
             <UpperHeader />
-            <Header pageTitle='ニュース'></Header>
+            <Header pageTitle='iGEM TSUKUBA　'></Header>
             <p>WIP</p>
             <Footer />
         </div>
