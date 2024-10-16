@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import HeaderMiniMenu from '../components/header_mini_menu/HeaderMiniMenu';
 
 function App() {
   return (
@@ -19,16 +18,6 @@ function App() {
         >
           Learn React
         </a>
-        <HeaderMiniMenu 
-          categoryColor="green"
-          bigTabName_ja='協賛のお願い'
-          bigTabName_en='Recruitment'
-          bigTabURL='https://google.com'
-          smallTab={[[{
-            smallTabLabels: ['ググレカス'],
-            smallTabURLs: ['https://Google.com'],
-            content: undefined
-        }]]} />
       </header>
     </div>
   );
