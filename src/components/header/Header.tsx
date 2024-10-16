@@ -9,7 +9,7 @@ const Header : React.FC<HeaderProps> = ({ pageTitle }) => {
     return(
         <div>
             <div style={{ height: "80px", backgroundColor: "#691C70", }}>
-                <Button label="お問い合わせ" textColor="white" link="mailto:igemtsukuba24@gmail.com" />
+                <Button label="お問い合わせ" textColor="white" backgroundColor="#691C70" link="mailto:igemtsukuba24@gmail.com"/>
             </div>
             <p>{pageTitle}</p>
         </div>
