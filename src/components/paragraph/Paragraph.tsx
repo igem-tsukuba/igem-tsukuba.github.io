@@ -11,7 +11,7 @@ const Paragraph: React.FC<ParagraphProps>  = ({
       <p
         style={{
           fontFamily: 'Noto Sans JP',
-          fontSize: '20pt',
+          fontSize: '14pt',
           color: 'black',
           backgroundColor: 'white',
           paddingTop: '10pt',
