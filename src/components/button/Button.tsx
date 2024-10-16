@@ -4,10 +4,11 @@ type ButtonProps = {
     textColor: string;
     backgroundColor?: string;
     link: string;
+    margin?: string; 
 };
 
 const Button: React.FC<ButtonProps> = ({
-    label, textColor, link, backgroundColor = '#FFFFFF'
+    label, textColor, link, backgroundColor = '#FFFFFF', margin = '20px 40px'
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -33,7 +34,7 @@ const Button: React.FC<ButtonProps> = ({
             border: `3px solid ${isHovered ? backgroundColor: textColor}`,
             borderRadius: '18px',
             padding: '5px 30px',
-            margin: "20px 40px",
+            margin: margin,
             fontFamily: 'Noto Sans JP',
             fontSize: '14pt',
             cursor: 'pointer',
