@@ -17,6 +17,7 @@ type HeaderMiniMenuProps = {
 const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabName_ja, bigTabName_en, bigTabURL, smallTab }) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
+    const [hoveredTab, setHoveredTab] = useState<[number, number] | null>(null);
 
     const handleMouseEnter = () => {
         setIsOpen(true);
@@ -26,6 +27,14 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
     const handleMouseLeave = () => {
         setIsOpen(false);
         setIsHovered(false);
+    };
+
+    const handleTabMouseEnter = (rowIndex: number, colIndex: number) => {
+        setHoveredTab([rowIndex, colIndex]);
+    };
+
+    const handleTabMouseLeave = () => {
+        setHoveredTab(null);
     };
 
     // smallTabの各行のsmallTabLabelsの要素数がすべて0であるかをチェック
@@ -43,7 +52,7 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
     }
 
     return (
-        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+        <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ position: 'relative', width: '200px'}}>
             <div style={{
                 backgroundColor: isHovered ? categoryColor : "white",
                 width: "240px",
@@ -51,7 +60,8 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
                 borderBottom: `10px solid ${categoryColor}`,
                 borderTop: "none",
                 borderLeft: "none",
-                borderRight: "none"
+                borderRight: "none",
+                textAlign: "center",
                 }}>
             <p style={{
                 color: isHovered ? "white" : "black",
@@ -73,18 +83,19 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
             </p>
             </div>
             {isOpen && (
-                <div>
+                <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 1000 }}>
                     {smallTab.map((row, rowIndex) => (
-                        <div key={rowIndex} style={{color: "white", backgroundColor: categoryColor, }}>
+                        <div key={rowIndex} style={{ display: 'flex', flexDirection: 'column' }}>
                             {row.map((tab, colIndex) => (
-                                <div key={colIndex}>
-                                    <a href={tab.smallTabURLs[colIndex]} style={{textDecoration: "none"}}>
-                                        <div style={{margin: "-20px"}}>
-                                            <p style={{color: "white", textDecoration: "none"}}>{tab.smallTabLabels[colIndex]}</p>
-                                        </div>
-                                        
-                                    </a>
-                                </div>
+                                tab.smallTabLabels.map((label, index) => (
+                                    <div key={index} onMouseEnter={() => handleTabMouseEnter(rowIndex, colIndex)} onMouseLeave={handleTabMouseLeave} style={{width: "240px", height: "50px", margin: "0", padding: "0"}}>
+                                        <a href={tab.smallTabURLs[index]} style={{textDecoration: "none"}}>
+                                            <div style={{backgroundColor: hoveredTab && hoveredTab[0] === rowIndex && hoveredTab[1] === colIndex ? categoryColor : "initial", height: "50px", margin: "0", padding: "0",}}>
+                                                <p style={{color: "white", textDecoration: "none", backgroundColor: categoryColor, textAlign: "center", lineHeight: "50px", margin: "0", padding: "0",  borderBottom: `3px solid white`, borderTop: `3px solid white`}}>{label}</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                ))
                             ))}
                         </div>
                     ))}
