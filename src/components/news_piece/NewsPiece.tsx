@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Paragraph from "../paragraph/Paragraph";
 
 type NewsProps = {
   title: string;
@@ -34,9 +35,10 @@ const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, picture
                     <div style={{ backgroundColor: color, width: "75px", height: "30px", padding: "5px 5px", borderRadius: "10px", marginRight: "10px", display: "flex", justifyContent: "center"}}>
                         <p style={{ color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", fontSize: "14pt", margin: 0}}>{label}</p>
                     </div>
+                    <h2 style={{fontFamily: "Noto Sans JP", fontWeight: "500", fontSize: "12pt"}}>{date}</h2>
                 </div>
-                <h2>{date}</h2>
-                <p>{content}</p>
+                <Paragraph text={content}/>
+                
             </div>
         </div>
     );
