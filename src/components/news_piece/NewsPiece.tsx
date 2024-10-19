@@ -12,7 +12,7 @@ type NewsProps = {
   topBar?: boolean;
 };
 
-const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, pictureSrc, pictureAlt, topBar }) => {
+const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, pictureSrc, pictureAlt, topBar = "true" }) => {
     // controlの値と管轄の表示を対応させる関数
     const getColorAndLabel = (control: number) => {
         switch (control) {
