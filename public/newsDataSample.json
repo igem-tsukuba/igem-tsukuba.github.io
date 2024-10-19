@@ -1,0 +1,35 @@
+[
+    {
+        "title": "新しいプロジェクトが始まりました",
+        "date": "2023-10-01",
+        "control": 1,
+        "content": "私たちの新しいプロジェクトが正式にスタートしました。詳細は以下のリンクをご覧ください。",
+        "pictureSrc": "logo512.png",
+        "pictureAlt": "プロジェクト開始の画像",
+        "topBar": false
+    },
+    {
+        "title": "技術セミナーの開催",
+        "date": "2023-09-15",
+        "control": 2,
+        "content": "次回の技術セミナーは9月15日に開催されます。参加希望の方は事前に登録をお願いします。",
+        "picture": "images/tech_seminar.jpg",
+        "picture_alt": "技術セミナーの画像"
+    },
+    {
+        "title": "教育活動の報告",
+        "date": "2023-08-20",
+        "control": 3,
+        "content": "8月20日に行われた教育活動の報告です。多くの学生が参加し、非常に有意義な時間を過ごしました。",
+        "picture": "images/education_activity.jpg",
+        "picture_alt": "教育活動の画像"
+    },
+    {
+        "title": "新しいメンバーの紹介",
+        "date": "2023-07-10",
+        "control": 4,
+        "content": "新しいメンバーがチームに加わりました。彼らの紹介と今後の抱負をお伝えします。",
+        "picture": "images/new_members.jpg",
+        "picture_alt": "新しいメンバーの画像"
+    }
+]
