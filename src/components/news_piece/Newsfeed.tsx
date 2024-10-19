@@ -1,53 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getColorAndLabel } from './NewsControlUtils';
-import Paragraph from "../paragraph/Paragraph";
 
-type NewsProps = {
-  title: string;
-  date: string;
-  control: number;
-  content: string;
-  picture: string;
-  picture_alt: string;
-};
+type NewsData = {
+    title: string;
+    date: string;
+    control: number;
+    content: string;
+    pictureSrc: string;
+    pictureAlt: string;
+    topBar?: boolean;
+  };
 
-const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, picture, picture_alt }) => {
-    const { color, label } = getColorAndLabel(control); // ユーティリティ関数の使用
+const Newsfeed: React.FC = () => {
+    const [newsData, setNewsData] = useState<NewsData[]>([]);
 
-    const [isContentVisible, setIsContentVisible] = useState(true);
 
-    const handleTitleClick = () => {
-        setIsContentVisible(!isContentVisible);
-    };
+    useEffect(() => {
+        fetch(`${process.env.PUBLIC_URL}/newsDataSample.json`)
+            .then(response => response.json())
+            .then(data => setNewsData(data));
+    }, []);
 
     return (
         <div>
-            <div style={{ margin: "0px 10% 0px 10%" }}>
-                <div style={{ display: "flex", alignItems: "center" }}>
-                    <h1 
-                        style={{ 
-                            fontFamily: "Noto Sans JP", 
-                            fontWeight: "600", 
-                            fontSize: "24pt", 
-                            width: "80%", 
-                            whiteSpace: isContentVisible ? "normal" : "nowrap", 
-                            overflow: isContentVisible ? "visible" : "hidden", 
-                            textOverflow: isContentVisible ? "clip" : "ellipsis",
-                            cursor: "pointer" 
-                        }} 
-                        onClick={handleTitleClick}
-                    >
-                        {title}
-                    </h1>
-                    <div style={{ backgroundColor: color, width: "75px", height: "30px", padding: "5px 5px", borderRadius: "10px", marginRight: "10px", display: "flex", justifyContent: "center" }}>
-                        <p style={{ color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", fontSize: "14pt", margin: 0 }}>{label}</p>
-                    </div>
-                    <h2 style={{ fontFamily: "Noto Sans JP", fontWeight: "500", fontSize: "12pt" }}>{date}</h2>
-                </div>
-                {isContentVisible && <Paragraph text={content} />}
+            <div style={{border: "1px solid black"}}>
+                {newsData.slice(0, 3).map((news, index) => {
+                    const { color, label } = getColorAndLabel(news.control);
+                    return (
+                        <div key={index}>
+                            <div  style={{display: "flex", justifyContent: "center"}}>
+                                <p style={{}}>{news.title}</p>
+                                <p>{news.date}</p>
+                                <p>{color}</p>
+                                <p>{label}</p>
+                            </div>
+                            <hr />
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
-};
+}
 
-export default NewsPiece;
+
+export default Newsfeed;
