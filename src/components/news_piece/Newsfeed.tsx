@@ -43,11 +43,11 @@ const Newsfeed: React.FC = () => {
                         return (
                             <div key={index}>
                                 <div style={{ display: "flex", justifyContent: "start", alignItems: "center" }}>
-                                    <p style={{ fontFamily: "Noto Sans JP", fontSize: "12pt", marginLeft: "10%"}}>{news.date}</p>
-                                    <div style={{ backgroundColor: color, width: "80px", height: "30px", display: "flex", justifyContent: "center", borderRadius: "10px", marginLeft: "30px"}}>
-                                        <p style={{color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", fontSize: "12pt", margin: "0"}}>{label}</p>
+                                    <p style={{ fontFamily: "Noto Sans JP", fontSize: "14pt", marginLeft: "10%"}}>{news.date}</p>
+                                    <div style={{ backgroundColor: color, width: "90px", height: "30px", display: "flex", justifyContent: "center", borderRadius: "10px", marginLeft: "30px"}}>
+                                        <p style={{color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", fontSize: "14pt", margin: "0"}}>{label}</p>
                                     </div>
-                                    <p style={{ fontFamily: "Noto Sans JP", fontSize: "12pt", marginLeft: "30px"}}>{news.title}</p>
+                                    <p style={{ fontFamily: "Noto Sans JP", fontSize: "14pt", marginLeft: "30px"}}>{news.title}</p>
                                 </div>
                                 <hr style={{ width:"80%" }}/>
                             </div>
