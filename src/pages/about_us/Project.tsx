@@ -30,9 +30,9 @@ const Log: React.FC = () => {
 
         <Button
             label='2023年度の研究テーマはこちら'
-            textColor='#000000'
-            backgroundColor='#E0FFFF'
-            link='https://www.google.co.jp'
+            textColor='#D20000'
+            backgroundColor='#FFFFFF'
+            link='/about/project'
             margin='80px'/>
 
         <Footer/>
