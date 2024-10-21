@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/header/Header';
 import Footer from '../components/footer/Footer';
 import UpperHeader from '../components/header/UpperHeader';
+import Newsfeed from '../components/news_piece/Newsfeed';
 
 
 const Home: React.FC = () => {
@@ -9,7 +10,7 @@ const Home: React.FC = () => {
         <div>
             <UpperHeader />
             <Header pageTitle='iGEM TSUKUBA　'></Header>
-            <p>WIP</p>
+            <Newsfeed />
             <Footer />
         </div>
     );
