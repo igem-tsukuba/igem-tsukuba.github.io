@@ -15,8 +15,8 @@ const MenuIcon: React.FC = () => {
             <div
                 onClick={toggleMenu} // クリック時にメニューをトグルするイベント
                 style={{
-                    width: '77px',
-                    height: '77px',
+                    width: '60px',
+                    height: '60px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
@@ -33,39 +33,40 @@ const MenuIcon: React.FC = () => {
                 <div
                     style={{
                         width: '100%',
-                        height: '8px',
+                        height: '5px',
                         backgroundColor: 'white',
                         borderRadius: '20px',
                         marginTop:'0px',
-                        marginBottom: '6px',
+                        marginBottom: '4px',
                     }}
                 ></div>
                 {/* 2本目のライン */}
                 <div
                     style={{
                         width: '100%',
-                        height: '8px',
+                        height: '5px',
                         backgroundColor: 'white',
                         borderRadius: '20px',
-                        marginBottom: '6px',
+                        marginBottom: '4px',
                     }}
                 ></div>
                 {/* 3本目のライン */}
                 <div
                     style={{
                         width: '100%',
-                        height: '8px',
+                        height: '5px',
                         backgroundColor: 'white',
                         borderRadius: '20px',
-                        marginBottom: '5px',
+                        marginBottom: '3px',
                     }}
                 ></div>
                 {/* メニューのラベル */}
                 <div
                     style={{
                         marginTop: '0px',
-                        fontSize: '15px',
-                        fontFamily: 'Arial, sans-serif',
+                        marginBottom: '0px',
+                        fontSize: '12px',
+                        fontFamily: 'Noto Sans JP,sans-serif',
                     }}
                 >
                     MENU
