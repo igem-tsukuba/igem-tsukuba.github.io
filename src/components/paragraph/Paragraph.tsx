@@ -2,6 +2,7 @@ import React from 'react';
   
 type ParagraphProps = {
     text: string;  
+
 };  
 
 const Paragraph: React.FC<ParagraphProps>  = ({
