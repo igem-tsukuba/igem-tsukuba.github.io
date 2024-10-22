@@ -43,8 +43,7 @@ const Log: React.FC = () => {
             label='2023年度の研究テーマはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/project'
-            margin='80px'/>
+            link='/about/project'/>
 
         <Footer/>
 
