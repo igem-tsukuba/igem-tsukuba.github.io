@@ -4,7 +4,6 @@ import Footer from '../components/footer/Footer';
 import UpperHeader from '../components/header/UpperHeader';
 import Newsfeed from '../components/news_piece/Newsfeed';
 
-
 const Home: React.FC = () => {
     return (
         <div>
@@ -12,6 +11,7 @@ const Home: React.FC = () => {
             <Header pageTitle='iGEM TSUKUBA　'></Header>
             <Newsfeed />
             <Footer />
+           
             
             
             

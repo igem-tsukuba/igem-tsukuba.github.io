@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from '../image/Image';
 
 type ButtonProps = {
     label: string;
@@ -28,10 +29,11 @@ const EducationButton: React.FC<ButtonProps> = ({
     return (
         <div className="flame" style={{
             width: '350px',
-            height: '350px'
+            height: '350px',
+            marginLeft: '300px'
         }}>
             <div className="picture" style={{marginTop: '5px'}}>
-                <img src={`/components/`} alt="" style={{width: '200px', marginLeft: '100px'}} />
+                <Image src={'pages/Home/education.webp'} alt={'Education Achievements'} caption={''} />
             </div>
 
             {/* Description Text */}
