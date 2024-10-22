@@ -19,7 +19,8 @@ const Paragraph: React.FC<ParagraphProps>  = ({
           paddingLeft: '20pt',
           paddingRight: '20pt',
           marginTop: '10pt',
-          marginLeft: '30px',
+          marginLeft: '10%',
+          marginRight: '10%',
           textAlign: 'left',
         }}
       >
