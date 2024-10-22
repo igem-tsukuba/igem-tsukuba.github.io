@@ -12,7 +12,7 @@ const Title: React.FC<TitleProps>  = ({
         style={{
           fontFamily: 'Noto Sans JP',
           fontWeight: '600',
-          fontSize: '42pt',
+          fontSize: '24pt',
           color: 'black',
           backgroundColor: 'white',
           paddingTop: '10pt',
@@ -21,6 +21,7 @@ const Title: React.FC<TitleProps>  = ({
           paddingRight: '20pt',
           marginTop: '10pt',
           marginLeft: '10%',
+          marginRight: '10%',
           textAlign: 'left',
         }}
       >
