@@ -32,17 +32,16 @@ const EducationButton: React.FC<ButtonProps> = ({
     return (
         <div className="flame" style={{
             width: '350px',
-            height: '350px',
-            marginLeft: '300px'
+            height: '350px'
         }}>
-            <div className="picture" style={{marginTop: '5px'}}>
+            <div className="picture" style={{marginTop: '10px'}}>
                 <Image src={''} alt={''} caption={''} />
             </div>
 
             {/* Description Text */}
             <div className="text">
                 <p>
-                    {text}
+                   {text}
                 </p>
                 <p>
                     {text}

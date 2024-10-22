@@ -11,11 +11,6 @@ const Home: React.FC = () => {
             <Header pageTitle='iGEM TSUKUBA　'></Header>
             <Newsfeed />
             <Footer />
-           
-            
-            
-            
-
         </div>
     );
 }
