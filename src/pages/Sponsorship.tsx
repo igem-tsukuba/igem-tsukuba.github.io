@@ -54,7 +54,7 @@ const Sponsorship: React.FC = () => {
            <Image
            src='pages/Sponsership/cloudfinding.webp'
            alt='「AI」✖️「合成生物学」で世界へ'
-           caption='クラウドファンディングのメイン画像'
+           caption=' '
            width={500}
            height={375}
            borderRadius={0}
