@@ -1,8 +1,11 @@
 import React from 'react';
   
 type ParagraphProps = {
+
     text: string | string[];
     isBulletList?: boolean;
+
+
 };  
 
 const Paragraph: React.FC<ParagraphProps>  = ({
