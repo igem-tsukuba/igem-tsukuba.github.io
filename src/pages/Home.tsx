@@ -24,8 +24,7 @@ const Home: React.FC = () => {
                 label='iGEMでできること'
                 textColor='#691C70'
                 backgroundColor='#FFFFFF'
-                link=''
-                margin='30px'/>
+                link=''/>
             
             <Subtitle
                 text='iGEM TSUKUBAには皆様の温かいご支援が必要です'/>
@@ -35,20 +34,17 @@ const Home: React.FC = () => {
                 label='もっと見る'
                 textColor='#691C70'
                 backgroundColor='#FFFFFF'
-                link='/Sponsorship'
-                margin='30px'/>
+                link='/Sponsorship'/>
             <Button
                 label='クラウドファンディングはこちら'
                 textColor='#691C70'
                 backgroundColor='#FFFFFF'
-                link='https://camp-fire.jp/projects/787804/view'
-                margin='30px'/>
+                link='https://camp-fire.jp/projects/787804/view'/>
             <Button
                 label='お問い合わせはこちら'
                 textColor='#691C70'
                 backgroundColor='#FFFFFF'
-                link=''
-                margin='30px'/>
+                link=''/>
 
             <Footer/>
         </div>
