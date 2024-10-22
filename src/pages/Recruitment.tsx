@@ -8,6 +8,13 @@ import Button from '../components/button/Button';
 import Footer from '../components/footer/Footer';
 
 const Recruitment: React.FC = () => {
+    const bulletPoints = [
+        '生物が好き',
+        '研究が好き',
+        '教育活動に興味がある',
+        '自分に向いていることを見つけたい',
+        'みんなで大会に向けて頑張ってみたい'
+      ];
     return (
         <div>
         <UpperHeader/>
@@ -17,8 +24,11 @@ const Recruitment: React.FC = () => {
 
         <Subtitle
             text='私たちは新しい仲間を募集しています！'/>
+
         <Paragraph
-            text='生物が好き！研究が好き！教育活動に興味がある！自分に向いていることを見つけたい！みんなで大会に向けて頑張ってみたい！iGEM TSUKUBAは、志高い新入生を募集しています！生物に自信がなくても大丈夫。一緒に金メダルを目指してみませんか？'/>
+            text={bulletPoints} isBulletList={true}/>
+        <Paragraph
+            text='iGEM TSUKUBAは、志高い新入生を募集しています！生物に自信がなくても大丈夫。一緒に金メダルを目指してみませんか？'/>
 
         <Subtitle
            text='具体的な活動内容'/>
