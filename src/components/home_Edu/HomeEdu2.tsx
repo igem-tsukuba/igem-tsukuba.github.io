@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import Image from '../image/Image';
+import Button from '../button/Button'
 
 type ButtonProps = {
     label: string;
     textColor: string;
     link: string;
+    text: string;
 };
 
 const EducationButton: React.FC<ButtonProps> = ({
     label,
     textColor,
-    link
+    link,
+    text
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -33,41 +36,22 @@ const EducationButton: React.FC<ButtonProps> = ({
             marginLeft: '300px'
         }}>
             <div className="picture" style={{marginTop: '5px'}}>
-                <Image src={'pages/Home/education.webp'} alt={'Education Achievements'} caption={''} />
+                <Image src={''} alt={''} caption={''} />
             </div>
 
             {/* Description Text */}
             <div className="text">
                 <p>
-                    iGEM TSUKUBAでは、中学校・高等学校への出前授業をはじめとした教育活動に積極的に取り組んでおります。
+                    {text}
                 </p>
                 <p>
-                    先端生物学の世界を知りたい、紹介したい方はご一報ください。
+                    {text}
                 </p>
             </div>
 
             {/* Orange Button */}
             <div className="Orange Button">
-                <button
-                    style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center',
-                        color: isHovered ? '#FFFFFF' : textColor,
-                        backgroundColor: isHovered ? textColor : '#FFFFFF',
-                        padding: '5px 30px',
-                        border: `3px solid ${textColor}`,
-                        borderRadius: '12px',
-                        fontFamily: 'Noto Sans JP',
-                        fontSize: '12pt',
-                        cursor: 'pointer',
-                    }}
-                    onClick={handleClick}
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                >
-                    {label}
-                </button>
+                <Button label={''} textColor={''} link={''} />
             </div>
         </div>
     );
