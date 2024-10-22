@@ -1,19 +1,22 @@
-import { SERVFAIL } from 'dns';
 import React, { useState } from 'react';
+
 type ButtonProps = {
     label: string;
     textColor: string;
     link: string;
 };
 
-const Button: React.FC<ButtonProps> = ({
-    label, textColor, link
+const EducationButton: React.FC<ButtonProps> = ({
+    label,
+    textColor,
+    link
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
-    const handleClick = () =>{
+    const handleClick = () => {
         window.location.href = link;
     };
+
     const handleMouseEnter = () => {
         setIsHovered(true);
     };
@@ -21,54 +24,51 @@ const Button: React.FC<ButtonProps> = ({
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
-    
-    return(
-      <div>
-      <p style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          color: '#000000',
-          backgroundColor:'#FFFFFF',
-          padding: '5px 30px',
-          fontFamily: 'Noto Sans JP',
-          fontSize: '20pt',
-          height: 'auto',
-          maxWidth: '300px',  
-          width: '100%',
-          whiteSpace: 'normal',
-          wordWrap: 'break-word',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          WebkitBoxOrient: 'vertical',
-          WebkitLineClamp: 6,
+
+    return (
+        <div className="flame" style={{
+            width: '350px',
+            height: '350px'
         }}>
-            こんにちは
-        </p>
-        <button
-        style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: isHovered ? '#FFFFFF' : textColor,
-            backgroundColor: isHovered ? textColor : '#FFFFFF',
-            padding: '5px 30px',
-            border: `3px solid ${textColor}`,
-            borderRadius: '20px',
-            fontFamily: 'Noto Sans JP',
-            fontSize: '20pt',
-            cursor: 'pointer',
-        }}
-        onClick = {handleClick}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        >
-            {label}
-        </button>
-      </div>
+            <div className="picture" style={{marginTop: '5px'}}>
+                <img src={`/components/`} alt="" style={{width: '200px', marginLeft: '100px'}} />
+            </div>
+
+            {/* Description Text */}
+            <div className="text">
+                <p>
+                    iGEM TSUKUBAでは、中学校・高等学校への出前授業をはじめとした教育活動に積極的に取り組んでおります。
+                </p>
+                <p>
+                    先端生物学の世界を知りたい、紹介したい方はご一報ください。
+                </p>
+            </div>
+
+            {/* Orange Button */}
+            <div className="Orange Button">
+                <button
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        color: isHovered ? '#FFFFFF' : textColor,
+                        backgroundColor: isHovered ? textColor : '#FFFFFF',
+                        padding: '5px 30px',
+                        border: `3px solid ${textColor}`,
+                        borderRadius: '12px',
+                        fontFamily: 'Noto Sans JP',
+                        fontSize: '12pt',
+                        cursor: 'pointer',
+                    }}
+                    onClick={handleClick}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                >
+                    {label}
+                </button>
+            </div>
+        </div>
     );
 };
 
-
-
-export default Button;
+export default EducationButton;

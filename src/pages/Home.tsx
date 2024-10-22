@@ -7,6 +7,10 @@ const Home: React.FC = () => {
         <div>
             <p>WIP</p>
             <Footer />
+            
+            
+            
+
         </div>
     );
 }
