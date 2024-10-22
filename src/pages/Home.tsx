@@ -7,7 +7,6 @@ import Newsfeed from '../components/news_piece/Newsfeed';
 import Button from '../components/button/Button';
 import Footer from '../components/footer/Footer';
 
-
 const Home: React.FC = () => {
     return (
         <div>
