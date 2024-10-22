@@ -21,8 +21,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='光合成代謝制御学研究室についてはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='https://plmet.biol.tsukuba.ac.jp/index.html'
-            margin='40px'/>
+            link='https://plmet.biol.tsukuba.ac.jp/index.html'/>
 
         <Subtitle
            text='設立の経緯' />
@@ -32,8 +31,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='iGEMについてはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/about_iGEM'
-            margin='40px'/>
+            link='/about/about_iGEM'/>
         
         <Subtitle
             text='メンバー概要'/>
@@ -43,14 +41,12 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='メンバー紹介はこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/members'
-            margin='40px'/>
+            link='/about/members'/>
         <Button
             label='2023年度の研究テーマはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/project'
-            margin='40px'/>
+            link='/about/project'/>
 
         <Subtitle
             text='組織体制'/>
@@ -76,8 +72,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='2025年度の研究テーマはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/project'
-            margin='40px'/>
+            link='/about/project'/>
 
         <Footer/>
 
