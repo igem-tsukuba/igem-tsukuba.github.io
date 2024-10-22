@@ -58,7 +58,7 @@ const Sponsorship: React.FC = () => {
            width={500}
            height={375}
            borderRadius={0}
-           margin='10px'
+           margin='0'
            />
 
             
