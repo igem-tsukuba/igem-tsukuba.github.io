@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Footer: React.FC = () => {
@@ -7,38 +8,62 @@ const Footer: React.FC = () => {
       color: 'white',
       backgroundColor: '#691C70',
       padding: '20px',
-      width: '1440px',
+      width: '100%',
       height: '350px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'start'
     }}>
       <div className="iGEM TSUKUBA">
-        <p style={{fontSize: '40px', marginTop: "0px", marginBottom: '0px', marginLeft: '30px'}}><strong>iGEM TSUKUBA</strong></p>
+        <p style={{fontFamily: "Roboto", fontWeight: "600", fontSize: '30pt', marginTop: "0px", marginBottom: '0px', marginLeft: '30px'}}>iGEM TSUKUBA</p>
       </div>
-      <div className="content" style={{display: 'flex'}}>
-        <div className="left-side" style={{flex: 1, marginLeft: "50px"}}>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '0px'}}><strong>私たちについて</strong></p>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '20px'}}>合成生物学とは</p>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '20px'}}>iGEMとは</p>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '20px'}}>iGEM TSUKUBAとは</p>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '20px'}}>研究内容</p>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '20px'}}>メンバー</p>
-          <p style={{fontSize: '20px', marginBottom: '-10px', marginLeft: '20px'}}>活動記録</p>
+      <div className="content" style={{display: 'flex', fontFamily: "Noto Sans JP", fontSize: "14pt", padding: 0}}>
+        <div className="left-side" style={{marginLeft: "50px"}}>
+          <p style={{margin: '20px 0 0 0'}}><strong>私たちについて</strong></p>
+          <p style={{margin: '5px 0 5px 20px'}}>
+            <Link to="/about/about_symbio" style={{ color: '#FFFFFF', textDecoration: 'none' }}>合成生物学とは</Link>
+          </p>
+          <p style={{margin: '5px 0 5px 20px'}}>
+            <Link to="/about/about_iGEM" style={{ color: '#FFFFFF', textDecoration: 'none' }}>iGEMとは</Link>
+          </p>
+          <p style={{margin: '5px 0 5px 20px'}}>
+            <Link to="/about/about_iGEM_TSUKUBA" style={{ color: '#FFFFFF', textDecoration: 'none' }}>iGEM TSUKUBAとは</Link>
+          </p>
+          <p style={{margin: '5px 0 5px 20px'}}>
+            <Link to="/about/project" style={{ color: '#FFFFFF', textDecoration: 'none' }}>研究内容</Link>
+          </p>
+          <p style={{margin: '5px 0 5px 20px'}}>
+            <Link to="/about/members" style={{ color: '#FFFFFF', textDecoration: 'none' }}>メンバー</Link>
+          </p>
+          <p style={{margin: '5px 0 5px 20px'}}>
+            <Link to="/about/log" style={{ color: '#FFFFFF', textDecoration: 'none' }}>活動記録</Link>
+          </p>
         </div>
         <div className="right-side" style={{marginLeft: "30px"}}>
-          <p style={{fontSize: '20px', marginBottom: '70px', marginLeft: '0px'}}><strong>ニュース</strong></p>
-          <p style={{fontSize: '20px', marginBottom: '75px', marginLeft: '0px'}}><strong>メンバー募集</strong></p>
-          <p style={{fontSize: '20px', marginBottom: '50px', marginLeft: '0px'}}><strong>ご協賛のお願い</strong></p>
+          <p style={{margin: '20px 0 0 0'}}><strong>
+            <Link to="/news" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ニュース</Link>
+          </strong></p>
+          <p style={{margin: '20px 0 0 0'}}><strong>
+            <Link to="/recruitment" style={{ color: '#FFFFFF', textDecoration: 'none' }}>メンバー募集</Link>
+          </strong></p>
+          <p style={{margin: '20px 0 0 0'}}><strong>
+            <Link to="/sponsorship" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ご協賛のお願い</Link>
+          </strong></p>
         </div>
         <div className="logo-and-social" style={{marginTop: '20px'}}>
+          <a href="https://x.com/Igem_Tsukuba" target="_blank" rel="noopener noreferrer">
             <img src={`${process.env.PUBLIC_URL}/components/footer/logo-white.png`} alt="iGEM TSUKUBA Logo" style={{width: '70px', marginLeft: '60px'}} />
+          </a>
+          <a href="https://www.instagram.com/igem_tsukuba/" target="_blank" rel="noopener noreferrer">
             <img src={`${process.env.PUBLIC_URL}/components/footer/Instagram_Glyph_White.png`} alt="Instagram" style={{width: '80px', height: '80px', marginLeft: '40px'}} />
+          </a>
+          <a href="mailto:igemtsukuba24@gmail.com" target="_blank" rel="noopener noreferrer">
             <img src={`${process.env.PUBLIC_URL}/components/footer/icon_mail.png`} alt="Mail" style={{width: '80px', height: '80px', marginLeft: '40px'}} />
-          </div> 
+          </a>
+        </div> 
         <div>
           <p style={{fontSize: '20px', marginLeft: '-1400px', marginTop: '350px'}}>🄫iGEM TSUKUBA</p>
-          </div>        
+        </div>        
        </div>
     </footer>
   );
