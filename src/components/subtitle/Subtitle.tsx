@@ -12,7 +12,7 @@ const Subtitle: React.FC<SubtitleProps>  = ({
         style={{
           fontFamily: 'Noto Sans JP',
           fontWeight: '600',
-          fontSize: '32pt',
+          fontSize: '20pt',
           color: 'black',
           backgroundColor: 'white',
           paddingTop: '10pt',
@@ -21,6 +21,7 @@ const Subtitle: React.FC<SubtitleProps>  = ({
           paddingRight: '20pt',
           marginTop: '10pt',
           marginLeft: '10%',
+          marginRight: '10%',
           textAlign: 'left',
         }}
       >

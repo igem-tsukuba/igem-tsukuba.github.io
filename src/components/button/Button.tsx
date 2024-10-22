@@ -8,7 +8,7 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({
-    label, textColor, link, backgroundColor = '#FFFFFF', margin = '20px 40px'
+    label, textColor, link, backgroundColor = '#FFFFFF', margin = '40px 20px 40px 10%'
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
