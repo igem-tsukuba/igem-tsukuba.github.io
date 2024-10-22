@@ -16,9 +16,9 @@ const UpperHeader : React.FC = () => {
                 width: "100%", 
                 zIndex: 1000 
             }}>
-                <div style={{width: "80%",
+                <div style={{width: "calc(100% - 300px",
                     height: "auto",
-                    backgroundImage: "linear-gradient(90deg, #FBD0FF, #691C70)"
+                    backgroundImage: "linear-gradient(90deg, #FBD0FF, #691C70)",
                 }} />
                 <div style={{
                     display: "flex",

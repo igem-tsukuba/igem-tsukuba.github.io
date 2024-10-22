@@ -49,8 +49,7 @@ const Recruitment: React.FC = () => {
             label='メンバー紹介はこちら'
             textColor='#00A400'
             backgroundColor='#FFFFFF'
-            link='/about/members'
-            margin='80px'/>
+            link='/about/members'/>
 
         <Footer/>
 
