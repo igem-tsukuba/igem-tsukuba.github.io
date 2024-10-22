@@ -5,6 +5,7 @@ import AboutIGEM from './pages/about_us/About_iGEM';
 import AboutSymBio from './pages/about_us/About_symbio';
 import AboutIGEMTSUKUBA from './pages/about_us/About_iGEM_TSUKUBA';
 import Project from './pages/about_us/Project';
+import Project2023 from './pages/about_us/Project2023';
 import Log from './pages/about_us/Log';
 import Members from './pages/about_us/Members';
 import News from './pages/News';
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           <Route path="/about/about_symbio" element={<AboutSymBio />} />
           <Route path="/about/about_iGEM_TSUKUBA" element={<AboutIGEMTSUKUBA />} />
           <Route path="/about/project" element={<Project />} />
+          <Route path="/about/project2023" element={<Project2023 />} />
           <Route path="/about/log" element={<Log />} />
           <Route path="/about/members" element={<Members />} />
           <Route path="/news" element={<News />} />

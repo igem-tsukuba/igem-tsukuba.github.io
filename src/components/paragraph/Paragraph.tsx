@@ -1,11 +1,15 @@
 import React from 'react';
   
 type ParagraphProps = {
-    text: string;  
+
+    text: string | string[];
+    isBulletList?: boolean;
+
+
 };  
 
 const Paragraph: React.FC<ParagraphProps>  = ({
-    text
+    text, isBulletList = false
 }) => {
   return (
       <p
@@ -19,11 +23,20 @@ const Paragraph: React.FC<ParagraphProps>  = ({
           paddingLeft: '20pt',
           paddingRight: '20pt',
           marginTop: '10pt',
-          marginLeft: '30px',
+          marginLeft: '10%',
+          marginRight: '10%',
           textAlign: 'left',
         }}
       >
-        {text}
+        {isBulletList && Array.isArray(text) ? (
+        <ul>
+          {text.map((item, index) => (
+            <li key={index}>{item}</li>
+          ))}
+        </ul>
+      ) : (
+        <>{Array.isArray(text) ? text.join(' ') : text}</>
+      )}
       </p>
   );
 };

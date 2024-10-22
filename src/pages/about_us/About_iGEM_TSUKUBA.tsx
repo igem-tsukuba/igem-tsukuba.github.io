@@ -21,8 +21,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='光合成代謝制御学研究室についてはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='https://plmet.biol.tsukuba.ac.jp/index.html'
-            margin='40px'/>
+            link='https://plmet.biol.tsukuba.ac.jp/index.html'/>
 
         <Subtitle
            text='設立の経緯' />
@@ -32,8 +31,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='iGEMについてはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/about_iGEM'
-            margin='40px'/>
+            link='/about/about_iGEM'/>
         
         <Subtitle
             text='メンバー概要'/>
@@ -43,23 +41,26 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='メンバー紹介はこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/members'
-            margin='40px'/>
+            link='/about/members'/>
         <Button
             label='2023年度の研究テーマはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/project'
-            margin='40px'/>
+            link='/about/project'/>
 
         <Subtitle
             text='組織体制'/>
         <Paragraph
             text='　iGEM TSUKUBAは図のようにTech班と総合運営班の二つの班を構え、1名のリーダー、2名の副リーダーがそれらをまとめる体制で動いています。またリーダー、副リーダー、会計を役員として役員会を構成し、チームの方向性について話し合う機会を設けています。またその結果は全体MTでの周知や総会での承認をもらうことによって、メンバー全員が同じ方向に進めるように邁進しています。'/>
         <Image
-            src=''
-            alt=''
-            caption=''/>
+            src='pages/about_us/About_iGEM_TSUKUBA/organization.webp'
+            alt='組織図'
+            caption=''
+            width={400}
+            height={300}
+            borderRadius={0}
+            margin='0px'
+            />
         <Paragraph
             text='　Tech班は主に、遺伝子組み換えなどの実際の実験（Wet）や数理的なモデリング(Dry)などを担当しています。今年度のテーマではAIの学習やその結果解析、Education活動の実験パートの監修を担当しています。また、本Webページの開発も先導しています。いわばiGEM TSUKUBAの技術者たちの集まりです。'/>
         <Paragraph
@@ -71,8 +72,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
             label='2025年度の研究テーマはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/project'
-            margin='40px'/>
+            link='/about/project'/>
 
         <Footer/>
 
