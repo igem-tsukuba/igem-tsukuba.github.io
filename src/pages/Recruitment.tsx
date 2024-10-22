@@ -25,6 +25,13 @@ const Recruitment: React.FC = () => {
         <Paragraph
             text='合成生物学の世界大会であるiGEMへの出場を目指し、日々実験・研究やミーティングを重ねています。実験研究活動以外にも、メンバーの母校や地域での教育活動、企業との連携等、幅広く活動しています。研究や実験はもちろん、学外での活動など他の人とは一味違う大学生活を送れます。生物学に詳しくなくても、理系でなくても熱意があれば大丈夫！あなたの得意を活かして私たちと世界を目指しませんか？'/>
 
+<       Button
+            label='メンバー紹介はこちら'
+            textColor='#00A400'
+            backgroundColor='#FFFFFF'
+            link='/about/members'/>
+
+
         <Image
             src='pages/Recruitment/welcome.webp'
             alt='全体MTの写真'
@@ -34,12 +41,6 @@ const Recruitment: React.FC = () => {
             borderRadius={0}
             margin='0px'
         />
-
-        <Button
-            label='メンバー紹介はこちら'
-            textColor='#00A400'
-            backgroundColor='#FFFFFF'
-            link='/about/members'/>
 
         <Footer/>
 
