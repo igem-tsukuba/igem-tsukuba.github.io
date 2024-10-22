@@ -1,13 +1,14 @@
-import { SERVFAIL } from 'dns';
 import React, { useState } from 'react';
 type ButtonProps = {
     label: string;
     textColor: string;
+    backgroundColor?: string;
     link: string;
+    margin?: string; 
 };
 
 const Button: React.FC<ButtonProps> = ({
-    label, textColor, link
+    label, textColor, link, backgroundColor = '#FFFFFF', margin = '20px 40px'
 }) => {
     const [isHovered, setIsHovered] = useState(false);
 
@@ -28,13 +29,14 @@ const Button: React.FC<ButtonProps> = ({
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            color: isHovered ? '#FFFFFF' : textColor,
-            backgroundColor: isHovered ? textColor : '#FFFFFF',
+            color: isHovered ? backgroundColor : textColor,
+            backgroundColor: isHovered ? textColor : backgroundColor,
+            border: `3px solid ${isHovered ? backgroundColor: textColor}`,
+            borderRadius: '18px',
             padding: '5px 30px',
-            border: `3px solid ${textColor}`,
-            borderRadius: '20px',
+            margin: margin,
             fontFamily: 'Noto Sans JP',
-            fontSize: '20pt',
+            fontSize: '14pt',
             cursor: 'pointer',
         }}
         onClick = {handleClick}
