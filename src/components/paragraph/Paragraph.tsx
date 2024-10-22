@@ -35,7 +35,7 @@ const Paragraph: React.FC<ParagraphProps>  = ({
           ))}
         </ul>
       ) : (
-        <p>{Array.isArray(text) ? text.join(' ') : text}</p>
+        <>{Array.isArray(text) ? text.join(' ') : text}</>
       )}
       </p>
   );
