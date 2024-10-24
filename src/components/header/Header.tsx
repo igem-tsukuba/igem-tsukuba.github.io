@@ -21,14 +21,14 @@ const Header : React.FC<HeaderProps> = ({ pageTitle }) => {
                 }} />
                 {/* 中央のタイトルの部分 */}
                 <div style = {{height: "80px"}}/>
-                <div style={{ display: "flex", justifyContent: "center",}}>
+                <div style={{ display: "flex", justifyContent: "center", backgroundColor: "white" }}>
                     <Link to="/">
                         <img src={`${process.env.PUBLIC_URL}/components/header/iGEM_TSUKUBA_Logo.png`} alt="iGEM TSUKUBAのロゴ" style={{width: '70px', height: '70px', objectFit: 'cover', padding: "15px"}} />
                     </Link>
                     <h1 style={{fontFamily: "Roboto, Noto Sans JP", fontWeight: "600", fontSize: "40pt", letterSpacing: "0.2em", margin: "10px"}}>{pageTitle}</h1>
                 </div>
                 {/* 下の小メニューの部分 */}
-                <div style = {{display: "flex", justifyContent: "space-between", position: "relative", zIndex: "3"}}>
+                <div style = {{display: "flex", justifyContent: "space-between", position: "relative", zIndex: "3", backgroundColor: "white"}}>
                     <div style = {{width: "5%"}}/>
                     <HeaderMiniMenu 
                         categoryColor="#D20000" 
