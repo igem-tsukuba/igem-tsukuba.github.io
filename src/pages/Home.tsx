@@ -1,7 +1,7 @@
 import React from 'react';
 import UpperHeader from '../components/header/UpperHeader';
 import Header from '../components/header/Header';
-import Subtitle from '../components/subtitle/Subtitle';
+import Title from '../components/title/Title';
 import Paragraph from '../components/paragraph/Paragraph';
 import Newsfeed from '../components/news_piece/Newsfeed';
 import Button from '../components/button/Button';
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
             <UpperHeader/>
             <Header 
                 pageTitle='iGEM TSUKUBA　'/>
-            <Newsfeed/>
+            <Newsfeed />
             <div style={{display: "flex", justifyContent: "center"}}>
                 <Banner 
                     src="pages/Home/education.webp" 
@@ -32,36 +32,41 @@ const Home: React.FC = () => {
                     buttonColor="#007AFF" 
                     link="/sponsorship" />
             </div>
-            <Subtitle
+            <hr style={{ border:"1px solid black", width: "80%" }} />
+            <Title
                 text='好奇心旺盛な皆さんを募集しています！'/>
             <Paragraph
                 text=''/>
             <Button
                 label='iGEMでできること'
-                textColor='#691C70'
+                textColor='#00A400'
                 backgroundColor='#FFFFFF'
-                link=''/>
-            
-            <Subtitle
+                link='/recruitment'/>
+            <hr style={{ border:"1px solid black", width: "80%" }} />
+            <Title
                 text='iGEM TSUKUBAには皆様の温かいご支援が必要です'/>
             <Paragraph
                 text=''/>
-            <Button
-                label='もっと見る'
-                textColor='#691C70'
-                backgroundColor='#FFFFFF'
-                link='/Sponsorship'/>
-            <Button
-                label='クラウドファンディングはこちら'
-                textColor='#691C70'
-                backgroundColor='#FFFFFF'
-                link='https://camp-fire.jp/projects/787804/view'/>
-            <Button
-                label='お問い合わせはこちら'
-                textColor='#691C70'
-                backgroundColor='#FFFFFF'
-                link=''/>
-
+            <div style={{ display: "flex", justifyContent: 'flex-start' }}>
+                <Button
+                    label='もっと見る'
+                    textColor='#007AFF'
+                    backgroundColor='#FFFFFF'
+                    link='/sponsorship'
+                    margin="40px 20px 40px 10%" />
+                <Button
+                    label='クラウドファンディングはこちら'
+                    textColor='#691C70'
+                    backgroundColor='#FFFFFF'
+                    link='https://camp-fire.jp/projects/787804/view'
+                    margin="40px 20px 40px 20px"/>
+                <Button
+                    label='お問い合わせはこちら'
+                    textColor='#691C70'
+                    backgroundColor='#FFFFFF'
+                    link='mailto:igemtsukuba24@gmail.com'
+                    margin="40px 20px 40px 20px"/>
+            </div>
             <Footer/>
         </div>
     );
