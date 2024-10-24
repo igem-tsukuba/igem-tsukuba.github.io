@@ -29,9 +29,9 @@ const Members: React.FC = () => {
 <Subtitle text='Tech班'></Subtitle>
 
 <SelfIntroduce
-        name_ja= '鈴木晶博'
-        name_en= 'Suzuki Masahiro'
-        college= '生物学類３年'
+        name_ja= '水本 千尋'
+        name_en= 'Mizumoto Chihiro'
+        college= '生物資源学類２年'
         word= '分生しか勝たん！'
         picture=''
         alt= 'Mizumoto Chihiro'
@@ -39,12 +39,12 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '水本 千尋'
-        name_en= 'Mizumoto Chihiro'
-        college= '生物資源学類２年'
-        word= '分生しか勝たん！'
+        name_ja= '鈴木晶博'
+        name_en= 'Suzuki Masahiro'
+        college= '生物学類３年'
+        word= 'いつまでジェネラリストでいられるかチャレンジ遂行中'
         picture=''
-        alt= 'Mizumoto Chihiro'
+        alt= 'Suzuki Masahiro'
         under_bar={true}
         ></SelfIntroduce>
 
@@ -139,16 +139,25 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 
-
         <Subtitle text='総合運営班'></Subtitle>
 
 <SelfIntroduce
-        name_ja= 'string'
-        name_en= 'string'
-        college= 'string'
-        word= 'string'
+        name_ja= '石﨑巧也'
+        name_en= 'Ishizaki Takuya'
+        college= '生物学類２年'
+        word= '常に睡魔と戦うヒトです。'
         picture=''
-        alt= 'string'
+        alt= 'Ishizaki Takuya'
+        under_bar={true}
+        ></SelfIntroduce>
+
+<SelfIntroduce
+        name_ja= '吉田若菜'
+        name_en= 'Yoshida Wanana'
+        college= '生物資源学類３年'
+        word= '犬派です。'
+        picture=''
+        alt= 'Yoshida Wanana'
         under_bar={true}
         ></SelfIntroduce>
 
@@ -163,12 +172,52 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= 'string'
-        name_en= 'string'
-        college= 'string'
-        word= 'string'
+        name_ja= '荒島未琴'
+        name_en= 'Arashima Mikoto'
+        college= '生物学類２年'
+        word= 'がんばります'
         picture=''
-        alt= 'string'
+        alt= 'Arashima Mikoto'
+        under_bar={true}
+        ></SelfIntroduce>
+
+<SelfIntroduce
+        name_ja= '駿藤佳久'
+        name_en= 'Sunto Yoshihisa'
+        college= '生物学類２年'
+        word= '頑張ります！！'
+        picture=''
+        alt= 'Sunto Yoshihisa'
+        under_bar={true}
+        ></SelfIntroduce>
+
+<SelfIntroduce
+        name_ja= '岡遙菜'
+        name_en= 'Oka Haruna'
+        college= '生物学類１年'
+        word= '最近、クジラとイルカがたくさん載ったファイルを買いました。お気に入りです。パンが好きです。'
+        picture=''
+        alt= 'Oka Haruna'
+        under_bar={true}
+        ></SelfIntroduce>
+
+<SelfIntroduce
+        name_ja= '稲垣 宏人'
+        name_en= 'Inagaki Hiroto'
+        college= '生物学類１年'
+        word= 'モンスターは無印派です'
+        picture=''
+        alt= 'Inagaki Hiroto'
+        under_bar={true}
+        ></SelfIntroduce>
+
+<SelfIntroduce
+        name_ja= '島津讃良'
+        name_en= 'Shimazu Sarara'
+        college= '生物学類１年'
+        word= 'がんばります２'
+        picture=''
+        alt= 'Shimazu Sarara'
         under_bar={true}
         ></SelfIntroduce>
 
