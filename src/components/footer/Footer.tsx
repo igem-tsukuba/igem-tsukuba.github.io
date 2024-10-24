@@ -15,7 +15,9 @@ const Footer: React.FC = () => {
       alignItems: 'start'
     }}>
       <div className="iGEM TSUKUBA">
-        <p style={{fontFamily: "Roboto", fontWeight: "600", fontSize: '30pt', marginTop: "0px", marginBottom: '0px', marginLeft: '30px'}}>iGEM TSUKUBA</p>
+        <p style={{fontFamily: "Roboto", fontWeight: "600", fontSize: '30pt', marginTop: "0px", marginBottom: '0px', marginLeft: '30px'}}>
+          <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>iGEM TSUKUBA</Link>
+        </p>
       </div>
       <div className="content" style={{display: 'flex', fontFamily: "Noto Sans JP", fontSize: "14pt", padding: 0}}>
         <div className="left-side" style={{marginLeft: "50px"}}>
