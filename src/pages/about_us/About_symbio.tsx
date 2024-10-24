@@ -2,7 +2,6 @@ import React from 'react';
 import Header from '../../components/header/Header';
 import UpperHeader from '../../components/header/UpperHeader';
 import Title from '../../components/title/Title';
-import Subtitle from '../../components/subtitle/Subtitle';
 import Paragraph from '../../components/paragraph/Paragraph';
 import Footer from '../../components/footer/Footer';
 
