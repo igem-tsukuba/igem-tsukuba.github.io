@@ -31,7 +31,7 @@ const Banner: React.FC<BannerProps> = ({src, alt, margin = "80px", text, buttonL
                 />
                 <Button
                     label={buttonLabel}
-                    textColor='#F59A23'
+                    textColor={buttonColor}
                     link={link}
                     margin="20px auto"
                 />
