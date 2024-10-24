@@ -18,7 +18,7 @@ const News: React.FC = () => {
     const [newsData, setNewsData] = useState<NewsData[]>([]);
 
     useEffect(() => {
-        fetch(`${process.env.PUBLIC_URL}/newsDataSample.json`)
+        fetch(`${process.env.PUBLIC_URL}/newsData.json`)
             .then(response => response.json())
             .then(data => setNewsData(data));
     }, []);
