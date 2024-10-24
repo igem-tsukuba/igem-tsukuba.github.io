@@ -5,7 +5,9 @@ import Subtitle from '../components/subtitle/Subtitle';
 import Paragraph from '../components/paragraph/Paragraph';
 import Newsfeed from '../components/news_piece/Newsfeed';
 import Button from '../components/button/Button';
+import Banner from '../components/banner/Banner';
 import Footer from '../components/footer/Footer';
+
 
 const Home: React.FC = () => {
     return (
@@ -14,7 +16,22 @@ const Home: React.FC = () => {
             <Header 
                 pageTitle='iGEM TSUKUBA　'/>
             <Newsfeed/>
-
+            <div style={{display: "flex", justifyContent: "center"}}>
+                <Banner 
+                    src="pages/Home/education.webp" 
+                    alt="Eduの写真" 
+                    text="Education頑張ってます、あーだこーだあーだこーだあーだこーだ" 
+                    buttonLabel="詳しくはこちら" 
+                    buttonColor="#F59A23" 
+                    link="/news" />
+                <Banner 
+                    src="pages/Sponsership/cloudfinding.webp" 
+                    alt="Eduの写真" 
+                    text="クラファンやってるよ！" 
+                    buttonLabel="詳しくはこちら" 
+                    buttonColor="#007AFF" 
+                    link="/sponsorship" />
+            </div>
             <Subtitle
                 text='好奇心旺盛な皆さんを募集しています！'/>
             <Paragraph
