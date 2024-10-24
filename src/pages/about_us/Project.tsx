@@ -4,6 +4,7 @@ import Header from '../../components/header/Header';
 import Title from '../../components/title/Title';
 import Subtitle from '../../components/subtitle/Subtitle';
 import Paragraph from '../../components/paragraph/Paragraph';
+import Image from '../../components/image/Image';
 import Button from '../../components/button/Button';
 import Footer from '../../components/footer/Footer';
 
@@ -21,6 +22,16 @@ const Log: React.FC = () => {
         <Subtitle
            text='タンパク質言語モデルを用いたタンパク質改良' />
 
+        <Image
+            src='pages/about_us/Project/project.webp'
+            alt='2024年度プロジェクト画像'
+            caption=''
+            width={400}
+            height={300}
+            borderRadius={0}
+            margin='0px'
+        />
+
         <Paragraph
             text='　タンパク質は薬の製造や昨今話題の生分解性バイオプラスチックの生産など分野を問わず利用されており、私たちの生活を見えない場所から支えています。しかし、これらタンパク質の多くは自然界から得られたものをそのまま使用しても効率の良い生産活動を行うことが出来ません。そのためタンパク質を人工的に改良し、性能を向上させたのちに使用されます。'/>
         <Paragraph
@@ -32,8 +43,7 @@ const Log: React.FC = () => {
             label='2023年度の研究テーマはこちら'
             textColor='#D20000'
             backgroundColor='#FFFFFF'
-            link='/about/project'
-            margin='80px'/>
+            link='/about/project2023'/>
 
         <Footer/>
 
