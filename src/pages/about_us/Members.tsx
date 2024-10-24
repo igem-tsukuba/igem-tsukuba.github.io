@@ -153,12 +153,12 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= 'string'
-        name_en= 'string'
-        college= 'string'
-        word= 'string'
+        name_ja= '國﨑沙和子'
+        name_en= 'Kunisaki Sawako'
+        college= '生物学類２年'
+        word= 'ワーキングホリデーとワーカホリックって似てませんか？'
         picture=''
-        alt= 'string'
+        alt= 'Kunisaki Sawako'
         under_bar={true}
         ></SelfIntroduce>
 
