@@ -10,7 +10,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, isBulletList = false }) => 
     if (Array.isArray(text)) {
       return text.join(' ');
     } else {
-      return text.split('\n').map((line, index) => (
+      return text.split('\\r\\n').map((line, index) => (
         <React.Fragment key={index}>
           {line}
           <br />
