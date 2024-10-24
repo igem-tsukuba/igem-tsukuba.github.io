@@ -16,23 +16,26 @@ type BannerProps = {
 const Banner: React.FC<BannerProps> = ({src, alt, margin = "80px", text, buttonLabel, buttonColor, link}) => {
     return (
         <div>
-            <Image
-                src={src}
-                alt={alt}
-                caption=""
-                width={400}
-                height={300}
-                borderRadius={0}
-                margin={margin}
-            />
-            <Paragraph
-                text={text}
-            />
-            <Button
-                label={buttonLabel}
-                textColor='#F59A23'
-                link={link}
-            />
+            <div style={{width: "450px", textAlign: "center",margin: margin}}>
+                <Image
+                    src={src}
+                    alt={alt}
+                    caption=""
+                    width={400}
+                    height={300}
+                    borderRadius={0}
+                    margin="0px"
+                />
+                <Paragraph
+                    text={text}
+                />
+                <Button
+                    label={buttonLabel}
+                    textColor='#F59A23'
+                    link={link}
+                    margin="20px auto"
+                />
+            </div>
         </div>
     )
 };
