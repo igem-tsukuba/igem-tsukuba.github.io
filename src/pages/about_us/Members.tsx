@@ -16,7 +16,7 @@ const Members: React.FC = () => {
         <Title text='リーダー'></Title>
         
 <SelfIntroduce
-        name_ja= '矢田目翔理'
+        name_ja= '矢田目 翔理'
         name_en= 'Yatame Shori'
         college= '生物学類２年'
         word= 'Grand Prize を獲得できるよう全力で取り組みます！'
@@ -38,7 +38,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '鈴木晶博'
+        name_ja= '鈴木 晶博'
         name_en= 'Suzuki Masahiro'
         college= '生物学類３年'
         word= 'いつまでジェネラリストでいられるかチャレンジ遂行中'
@@ -88,7 +88,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '河野洋'
+        name_ja= '河野 洋'
         name_en= 'Kawano Nada'
         college= '生物学類２年'
         word= 'クロマルかわいい'
@@ -141,7 +141,7 @@ const Members: React.FC = () => {
         <Title text='総合運営班'></Title>
 
 <SelfIntroduce
-        name_ja= '石﨑巧也'
+        name_ja= '石﨑 巧也'
         name_en= 'Ishizaki Takuya'
         college= '生物学類２年'
         word= '常に睡魔と戦うヒトです。'
@@ -151,7 +151,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '吉田若菜'
+        name_ja= '吉田 若菜'
         name_en= 'Yoshida Wakana'
         college= '生物資源学類３年'
         word= '犬派です。'
@@ -161,7 +161,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '國﨑沙和子'
+        name_ja= '國﨑 沙和子'
         name_en= 'Kunisaki Sawako'
         college= '生物学類２年'
         word= 'ワーキングホリデーとワーカホリックって似てませんか？'
@@ -171,7 +171,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '荒島未琴'
+        name_ja= '荒島 未琴'
         name_en= 'Arashima Mikoto'
         college= '生物学類２年'
         word= 'がんばります'
@@ -181,7 +181,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '駿藤佳久'
+        name_ja= '駿藤 佳久'
         name_en= 'Sunto Yoshihisa'
         college= '生物学類２年'
         word= '頑張ります！！'
@@ -191,7 +191,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '岡遙菜'
+        name_ja= '岡 遙菜'
         name_en= 'Oka Haruna'
         college= '生物学類１年'
         word= '最近、クジラとイルカがたくさん載ったファイルを買いました。お気に入りです。パンが好きです。'
@@ -211,7 +211,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 <SelfIntroduce
-        name_ja= '島津讃良'
+        name_ja= '島津 讃良'
         name_en= 'Shimazu Sarara'
         college= '生物学類１年'
         word= 'がんばります２'
