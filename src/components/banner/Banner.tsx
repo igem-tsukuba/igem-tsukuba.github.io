@@ -26,9 +26,9 @@ const Banner: React.FC<BannerProps> = ({src, alt, margin = "80px", text, buttonL
                     borderRadius={0}
                     margin="0px"
                 />
-                <Paragraph
-                    text={text}
-                />
+                <p style={{fontFamily: "Noto Sans JP", fontSize: "14pt", lineHeight: "1.5em", textAlign: "start"}}>
+                    {text}
+                </p>
                 <Button
                     label={buttonLabel}
                     textColor={buttonColor}
