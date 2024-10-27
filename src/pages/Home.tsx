@@ -15,6 +15,43 @@ const Home: React.FC = () => {
             <UpperHeader/>
             <Header 
                 pageTitle='iGEM TSUKUBA　'/>
+            <div style={{ position: 'relative' }}>
+                <img 
+                    src={`${process.env.PUBLIC_URL}/pages/Home/Cell.svg`} 
+                    alt="iGEM TSUKUBAの写真" 
+                    style={{ marginLeft: "-100px", marginTop: "-100px" }} 
+                />
+                <img 
+                    src={`${process.env.PUBLIC_URL}/pages/about_us/About_iGEM/medal.webp`} 
+                    alt="iGEM TSUKUBAの写真" 
+                    style={{ 
+                        position: "absolute", 
+                        top: "240px", 
+                        left: "233px", 
+                        transform: "translate(-50%, -50%)", 
+                        width: "335px", 
+                        height: "335px", 
+                        borderRadius: "50%", 
+                        objectFit: "cover", 
+                        border: "5px solid #691C70" 
+                    }} 
+                />
+                <div style={{
+                    position: "absolute",
+                    top: "50px",
+                    left: "500px",
+                    width: "50%",
+                    height: "auto",
+                    backgroundColor: "white",
+                    padding: "20px"}}>
+                    <p style={{fontFamily: "Noto Sans JP", fontSize: "16pt", lineHeight: 2}}>私たちは、合成生物学という学問分野を活かして、世界をより良くするアイデアを競う「iGEM」という国際大会への出場を目指しています。</p>
+                    <div style={{display: "flex", justifyContent: "flex-start"}}>
+                        <Button label="合成生物学とは？" textColor="#D20000" link="/about/about_symbio" margin='20px 0 0 0'/>
+                        <Button label="iGEMとは？" textColor="#D20000" link="/about/about_iGEM" margin='20px 0 0 20px'/>
+                    </div>
+                    
+                </div>
+            </div>
             <Newsfeed />
             <div style={{display: "flex", justifyContent: "center"}}>
                 <Banner 
