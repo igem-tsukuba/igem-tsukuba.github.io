@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useScreenSizes } from '../WindowSizeUtils';
 
 const MenuIcon: React.FC = () => {
+    const { isMobileScreen } = useScreenSizes();
     const [isOpen, setIsOpen] = useState(false); // メニューの開閉状態を管理
 
     // ハンバーガーアイコンがクリックされたときにメニューの表示をトグル
@@ -15,15 +17,15 @@ const MenuIcon: React.FC = () => {
             <div
                 onClick={toggleMenu} // クリック時にメニューをトグルするイベント
                 style={{
-                    width: '60px',
-                    height: '60px',
+                    width: isMobileScreen ? '45px' : '60px',
+                    height: isMobileScreen ? '45px' : '60px',
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     alignItems: 'center',
                     cursor: 'pointer', // マウスカーソルが指マークになるように設定
                     backgroundColor: '#691C70',
-                    padding: '10px',
+                    padding: isMobileScreen ? '8px' : '10px',
                     boxSizing: 'border-box',
                     textAlign: 'center',
                     color: 'white',
@@ -65,7 +67,7 @@ const MenuIcon: React.FC = () => {
                     style={{
                         marginTop: '0px',
                         marginBottom: '0px',
-                        fontSize: '12px',
+                        fontSize: isMobileScreen ? '8px' : '12px',
                         fontFamily: 'Noto Sans JP,sans-serif',
                     }}
                 >
