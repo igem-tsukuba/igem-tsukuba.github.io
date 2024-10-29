@@ -41,14 +41,12 @@ const AboutIGEMTSUKUBA: React.FC = () => {
                 label='メンバー紹介はこちら'
                 textColor='#D20000'
                 backgroundColor='#FFFFFF'
-                link='/about/members'
-                margin="20px 0px 20px 10%"/>
+                link='/about/members'/>
             <Button
                 label='2023年度の研究テーマはこちら'
                 textColor='#D20000'
                 backgroundColor='#FFFFFF'
-                link='/about/project'
-                margin="20px 0px 20px 20px"/>
+                link='/about/project'/>
             </div>
             
             <Subtitle
@@ -62,7 +60,7 @@ const AboutIGEMTSUKUBA: React.FC = () => {
                 width={400}
                 height={300}
                 borderRadius={0}
-                margin='0px'/>
+                margin='0px 10%'/>
             <Paragraph
                 text='　Tech班は主に、遺伝子組み換えなどの実際の実験（Wet）や数理的なモデリング(Dry)などを担当しています。今年度のテーマではAIの学習やその結果解析、Education活動の実験パートの監修を担当しています。また、本Webページの開発も先導しています。いわばiGEM TSUKUBAの技術者たちの集まりです。'/>
             <Paragraph
