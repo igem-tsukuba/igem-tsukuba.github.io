@@ -150,7 +150,7 @@ const Home: React.FC = () => {
                     <Paragraph
                         text='　ともに切磋琢磨できる仲間が増えることを祈っております‼よろしくお願いいたします。'/>
                 </div>
-                <Image src="pages/Home/home_recruites.webp" alt="iGEMではさまざまなことに取り組むことができます" caption="" margin='0 20% 0 0'/>
+                <Image src="pages/Recruitment/icons.webp" alt="iGEMではさまざまなことに取り組むことができます" caption="" margin='0 20% 0 0'/>
             </div>
             <Button
                 label='iGEMでできること'
