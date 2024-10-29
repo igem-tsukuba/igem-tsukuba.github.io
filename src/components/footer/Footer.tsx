@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
           color: 'white',
           backgroundColor: '#691C70',
           padding: '20px',
-          width: '100%',
+          width: 'calc(100% - 40px)',
           height: isMobileScreen ? 'auto' : '350px',
           display: 'flex',
           flexDirection: 'column',
