@@ -41,14 +41,12 @@ const AboutIGEMTSUKUBA: React.FC = () => {
                 label='メンバー紹介はこちら'
                 textColor='#D20000'
                 backgroundColor='#FFFFFF'
-                link='/about/members'
-                margin="20px 0px 20px 10%"/>
+                link='/about/members'/>
             <Button
                 label='2023年度の研究テーマはこちら'
                 textColor='#D20000'
                 backgroundColor='#FFFFFF'
-                link='/about/project'
-                margin="20px 0px 20px 20px"/>
+                link='/about/project'/>
             </div>
             
             <Subtitle
