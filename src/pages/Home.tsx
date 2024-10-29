@@ -75,8 +75,8 @@ const Home: React.FC = () => {
                     alt="iGEM TSUKUBAの写真" 
                     style={{ 
                         position: "absolute", 
-                        top: isMobileScreen ? "105px" : isSmallScreen ? "160px" : "240px", 
-                        left: isMobileScreen ? "95px" : isSmallScreen ? "140px" : "233px", 
+                        top: isMobileScreen ? "105px" : isSmallScreen ? "160px" : "255px", 
+                        left: isMobileScreen ? "95px" : isSmallScreen ? "140px" : "225px", 
                         transform: "translate(-50%, -50%)", 
                         width: isMobileScreen ? "145px" : isSmallScreen ? "250px" : "335px", 
                         height: isMobileScreen ? "145px" : isSmallScreen ? "250px" : "335px", 
