@@ -25,8 +25,8 @@ const Members: React.FC = () => {
         under_bar={true}
         ></SelfIntroduce>
 
-        <Title text='Tech班'></Title>
-
+<Subtitle text ='Tech班リーダー'></Subtitle>
+        
 <SelfIntroduce
         name_ja= '水本 千尋'
         name_en= 'Mizumoto Chihiro'
@@ -37,11 +37,13 @@ const Members: React.FC = () => {
         under_bar={true}
         ></SelfIntroduce>
 
+<Subtitle text ='Tech班'></Subtitle>
+
 <SelfIntroduce
         name_ja= '鈴木 晶博'
         name_en= 'Suzuki Masahiro'
         college= '生物学類３年'
-        word= 'いつまでジェネラリストでいられるかチャレンジ遂行中'
+        word= 'これはね、クラリネットの赤ちゃん。'
         picture='pages\about_us\Members\SuzukiMasahiro.webp'
         alt= 'Suzuki Masahiro'
         under_bar={true}
@@ -138,7 +140,7 @@ const Members: React.FC = () => {
         ></SelfIntroduce>
 
 
-        <Title text='総合運営班'></Title>
+<Subtitle text ='総合運営班リーダー'></Subtitle>
 
 <SelfIntroduce
         name_ja= '石﨑 巧也'
@@ -147,6 +149,18 @@ const Members: React.FC = () => {
         word= '常に睡魔と戦うヒトです。'
         picture='pages\about_us\Members\IshizakiTakuya.webp'
         alt= 'Ishizaki Takuya'
+        under_bar={true}
+        ></SelfIntroduce>
+
+<Subtitle text ='総合運営班'></Subtitle>
+
+<SelfIntroduce
+        name_ja= '石川 風太'
+        name_en= 'Ishikawa Fu-ta'
+        college= '生物学類３年'
+        word= 'Educationしか勝たん'
+        picture='pages\about_us\Members\IshikawaFuta.webp'
+        alt= 'Ishikawa Fu-ta'
         under_bar={true}
         ></SelfIntroduce>
 
