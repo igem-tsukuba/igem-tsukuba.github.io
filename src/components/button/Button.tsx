@@ -10,7 +10,7 @@ type ButtonProps = {
 };
 
 const Button: React.FC<ButtonProps> = ({
-    label, textColor, link, backgroundColor = '#FFFFFF', margin = '40px 20px 40px 10%'
+    label, textColor, link, backgroundColor = '#FFFFFF', margin
 }) => {
     const { isSmallScreen, isMobileScreen } = useScreenSizes();
     const [isHovered, setIsHovered] = useState(false);
@@ -25,6 +25,8 @@ const Button: React.FC<ButtonProps> = ({
     const handleMouseLeave = () => {
         setIsHovered(false);
     };
+
+    const defaultMargin = isMobileScreen ? '10px 0px 10px 10%' : isSmallScreen ? '15px 0px 15px 10%' : '20px 0px 20px 10%';
     
     return(
         <button
@@ -38,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
             borderWidth: isMobileScreen ? '1px' :isSmallScreen ? '2px' : '3px',
             borderRadius: isMobileScreen ? '9px' : isSmallScreen ? '16px' : '18px',
             padding: isMobileScreen ? '3px 10px' : '5px 30px',
-            margin: margin,
+            margin: margin || defaultMargin, // 指定されたマージンがない場合はデフォルトのマージンを使用
             fontFamily: 'Noto Sans JP',
             fontSize: isMobileScreen ? '8pt' : isSmallScreen ? '12pt' : '14pt',
             cursor: 'pointer',
