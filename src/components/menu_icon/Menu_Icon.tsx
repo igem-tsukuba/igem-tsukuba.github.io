@@ -130,8 +130,12 @@ const MenuIcon: React.FC = () => {
                         <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>
                             <Link to="/recruitment" style={{ color: '#FFFFFF', textDecoration: 'none' }}>メンバー募集</Link>
                         </li>
-                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>
-                        <Link to="/sponsorship" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ご協賛のお願い</Link>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>賛同される方へ</li>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
+                            <Link to="/sponsorship" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ご協賛のお願い</Link>
+                        </li>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
+                            <Link to="/education_request" style={{ color: '#FFFFFF', textDecoration: 'none' }}>教育活動先の募集</Link>
                         </li>
                     </ul>
                 </div>

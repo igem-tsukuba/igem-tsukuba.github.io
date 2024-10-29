@@ -79,10 +79,13 @@ const Header : React.FC<HeaderProps> = ({ pageTitle }) => {
                         />
                         <HeaderMiniMenu 
                             categoryColor="#007AFF" 
-                            bigTabName_ja="ご協賛のお願い" 
-                            bigTabName_en="Sponsorship" 
-                            bigTabURL="/Sponsorship"
-                            smallTab={[]} 
+                            bigTabName_ja="賛同される方へ" 
+                            bigTabName_en="For Sponsors" 
+                            bigTabURL="" 
+                            smallTab={[
+                                { label: 'ご協賛のお願い', url: '/Sponsorship' }, 
+                                { label: '教育活動先の募集', url: '/education_request' },
+                            ]} 
                         />
                         <div style = {{width: "5%"}}/>
                     </div>

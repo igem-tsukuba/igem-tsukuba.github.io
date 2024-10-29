@@ -64,9 +64,13 @@ const Footer: React.FC = () => {
               <p style={{margin: '20px 0 0 0'}}><strong>
                 <Link to="/recruitment" style={{ color: '#FFFFFF', textDecoration: 'none' }}>メンバー募集</Link>
               </strong></p>
-              <p style={{margin: '20px 0 0 0'}}><strong>
+              <p style={{margin: '20px 0 0 0'}}><strong>賛同される方へ</strong></p>
+              <p style={{margin: '5px 0 5px 20px'}}>
                 <Link to="/sponsorship" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ご協賛のお願い</Link>
-              </strong></p>
+              </p>
+              <p style={{margin: '5px 0 5px 20px'}}>
+                <Link to="/education_request" style={{ color: '#FFFFFF', textDecoration: 'none' }}>教育活動先の募集</Link>
+              </p>
             </div>
             <div className="logo-and-social" style={{marginTop: '20px', alignItems: "center"}}>
               <a href="https://x.com/Igem_Tsukuba" target="_blank" rel="noopener noreferrer">
