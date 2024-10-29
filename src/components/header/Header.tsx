@@ -1,19 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import HeaderMiniMenu from "../header_mini_menu/HeaderMiniMenu";
+import { useScreenSizes } from "../WindowSizeUtils";
 
 type HeaderProps = {
     pageTitle: string;
 }
 
 const Header : React.FC<HeaderProps> = ({ pageTitle }) => {
+    const { isSmallScreen, isMobileScreen } = useScreenSizes();
+
     return(
         <div>
             <div style={{position: "relative"}}>
                 <div style={{position: "absolute", zIndex: "3", backgroundColor: "white", width: "100%"}}>
                     {/* 灰色の線 */}
                     <div style={{ 
-                        borderBottom: "10px solid #A0A0A0", 
+                        borderBottom: isSmallScreen ? `5px solid #A0A0A0` : `10px solid #A0A0A0`, 
                         position: "absolute", 
                         bottom: "0%", 
                         left: "0", 
@@ -23,12 +26,25 @@ const Header : React.FC<HeaderProps> = ({ pageTitle }) => {
                         backgroundClip: "border-box",
                     }} />
                     {/* 中央のタイトルの部分 */}
-                    <div style = {{height: "80px"}}/>
+                    <div style = {{height: isMobileScreen ? '60px' : '80px'}}/>
                     <div style={{ display: "flex", justifyContent: "center"}}>
                         <Link to="/">
-                            <img src={`${process.env.PUBLIC_URL}/components/header/iGEM_TSUKUBA_Logo.png`} alt="iGEM TSUKUBAのロゴ" style={{width: '70px', height: '70px', objectFit: 'cover', padding: "15px"}} />
+                            <img 
+                                src={`${process.env.PUBLIC_URL}/components/header/iGEM_TSUKUBA_Logo.png`} 
+                                alt="iGEM TSUKUBAのロゴ" 
+                                style={{width: isMobileScreen ? '35px' : isSmallScreen ? '50px' : '70px', 
+                                        height: isMobileScreen ? '35px' : isSmallScreen ? '50px' : '70px', 
+                                        objectFit: 'cover', 
+                                        padding: "15px"}}
+                             />
                         </Link>
-                        <h1 style={{fontFamily: "Roboto, Noto Sans JP", fontWeight: "600", fontSize: "40pt", letterSpacing: "0.2em", margin: "10px"}}>{pageTitle}</h1>
+                        <h1 style={{fontFamily: "Roboto, Noto Sans JP", 
+                                    fontWeight: "600", 
+                                    fontSize: isMobileScreen ? '20pt' : isSmallScreen ? '30pt' :'40pt', 
+                                    letterSpacing: "0.2em", 
+                                    margin: "10px"}}>
+                            {pageTitle}
+                        </h1>
                     </div>
                     {/* 下の小メニューの部分 */}
                     <div style = {{display: "flex", justifyContent: "space-between", position: "relative", zIndex: 5}}>
@@ -72,7 +88,7 @@ const Header : React.FC<HeaderProps> = ({ pageTitle }) => {
                     </div>
                 </div>
             </div>
-            <div style={{height: "300px"}}/>
+            <div style={{height: isMobileScreen ? '150px' : isSmallScreen ? '230px' : '280px'}}/>
         </div>
     );
 }
