@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useScreenSizes } from "../WindowSizeUtils";
+
 type ButtonProps = {
     label: string;
     textColor: string;
@@ -10,6 +12,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
     label, textColor, link, backgroundColor = '#FFFFFF', margin = '40px 20px 40px 10%'
 }) => {
+    const { isSmallScreen, isMobileScreen } = useScreenSizes();
     const [isHovered, setIsHovered] = useState(false);
 
     const handleClick = () =>{
@@ -31,12 +34,12 @@ const Button: React.FC<ButtonProps> = ({
             alignItems: 'center',
             color: isHovered ? backgroundColor : textColor,
             backgroundColor: isHovered ? textColor : backgroundColor,
-            border: `3px solid ${isHovered ? backgroundColor: textColor}`,
-            borderRadius: '18px',
-            padding: '5px 30px',
+            border: isMobileScreen ? `1px solid ${isHovered ? backgroundColor: textColor}` : `3px solid ${isHovered ? backgroundColor: textColor}`,
+            borderRadius: isMobileScreen ? '9px' : '18px',
+            padding: isMobileScreen ? '3px 10px' : '5px 30px',
             margin: margin,
             fontFamily: 'Noto Sans JP',
-            fontSize: '14pt',
+            fontSize: isMobileScreen ? '8pt' : '14pt',
             cursor: 'pointer',
         }}
         onClick = {handleClick}
