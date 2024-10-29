@@ -34,12 +34,13 @@ const Button: React.FC<ButtonProps> = ({
             alignItems: 'center',
             color: isHovered ? backgroundColor : textColor,
             backgroundColor: isHovered ? textColor : backgroundColor,
-            border: isMobileScreen ? `1px solid ${isHovered ? backgroundColor: textColor}` : `3px solid ${isHovered ? backgroundColor: textColor}`,
-            borderRadius: isMobileScreen ? '9px' : '18px',
+            border: `solid ${isHovered ? backgroundColor: textColor}`,
+            borderWidth: isMobileScreen ? '1px' :isSmallScreen ? '2px' : '3px',
+            borderRadius: isMobileScreen ? '9px' : isSmallScreen ? '16px' : '18px',
             padding: isMobileScreen ? '3px 10px' : '5px 30px',
             margin: margin,
             fontFamily: 'Noto Sans JP',
-            fontSize: isMobileScreen ? '8pt' : '14pt',
+            fontSize: isMobileScreen ? '8pt' : isSmallScreen ? '12pt' : '14pt',
             cursor: 'pointer',
         }}
         onClick = {handleClick}
