@@ -28,7 +28,7 @@ const Paragraph: React.FC<ParagraphProps> = ({ text, isBulletList = false }) => 
         fontSize: isMobileScreen ? '10pt' : isSmallScreen ? '11pt' : '14pt',
         color: 'black',
         backgroundColor: 'white',
-        margin: '15pt 10%',
+        margin: isMobileScreen ? '10pt 10%' : isSmallScreen ? '11pt 10%' : '14pt 10%',
         textAlign: 'left',
       }}
     >

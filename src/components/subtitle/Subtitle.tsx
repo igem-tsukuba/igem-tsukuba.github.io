@@ -1,4 +1,6 @@
 import React from 'react';
+import { useScreenSizes } from "../WindowSizeUtils";
+
   
 type SubtitleProps = {
     text: string;  
@@ -7,21 +9,16 @@ type SubtitleProps = {
 const Subtitle: React.FC<SubtitleProps>  = ({
     text
 }) => {
+  const { isSmallScreen, isMobileScreen } = useScreenSizes();
   return (
       <h1
         style={{
           fontFamily: 'Noto Sans JP',
           fontWeight: '600',
-          fontSize: '20pt',
+          fontSize: isMobileScreen ? '14pt' : isSmallScreen ? '16pt' : '20pt',
           color: 'black',
           backgroundColor: 'white',
-          paddingTop: '10pt',
-          paddingBottom: '10pt',
-          paddingLeft: '20pt',
-          paddingRight: '20pt',
-          marginTop: '10pt',
-          marginLeft: '10%',
-          marginRight: '10%',
+          margin: isMobileScreen ? '10pt 10%' : isSmallScreen ? '11pt 10%' : '14pt 10%', //Paragraph.tsxのfontSizeと同じ高さにする
           textAlign: 'left',
         }}
       >
