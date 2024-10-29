@@ -116,10 +116,10 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
             {isOpen && (
                 <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 1000 }}>
                     {smallTab.map((tab, index) => (
-                        <div key={index} onMouseEnter={() => handleTabMouseEnter(index)} onMouseLeave={handleTabMouseLeave} style={{width: "240px", height: "50px", margin: "0", padding: "0", borderTop: "2px solid white"}}>
+                        <div key={index} onMouseEnter={() => handleTabMouseEnter(index)} onMouseLeave={handleTabMouseLeave} style={{width: isSmallScreen ? "120px" : "240px", height: isSmallScreen ? "25px" : "50px", margin: "0", padding: "0", borderTop: "2px solid white"}}>
                             <Link to={tab.url} style={{textDecoration: "none"}}>
-                                <div style={{backgroundColor: hoveredTab === index ? categoryColor : "initial", height: "50px", margin: "0", padding: "0"}}>
-                                    <p style={{color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", textDecoration: "none", backgroundColor: categoryColor, textAlign: "center", lineHeight: "50px", margin: "0", padding: "0"}}>{tab.label}</p>
+                                <div style={{backgroundColor: hoveredTab === index ? categoryColor : "initial", height: isSmallScreen ? "25px" : "50px", margin: "0", padding: "0"}}>
+                                    <p style={{color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", fontSize: isSmallScreen ? "8px" : "16px", textDecoration: "none", backgroundColor: categoryColor, textAlign: "center", lineHeight: isSmallScreen ? "25px" : "50px", margin: "0", padding: "0"}}>{tab.label}</p>
                                 </div>
                             </Link>
                         </div>
