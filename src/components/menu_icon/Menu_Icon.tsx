@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useScreenSizes } from '../WindowSizeUtils';
 
 const MenuIcon: React.FC = () => {
-    const { isMobileScreen } = useScreenSizes();
+    const { isMobileScreen, isSmallScreen } = useScreenSizes();
     const [isOpen, setIsOpen] = useState(false); // メニューの開閉状態を管理
 
     // ハンバーガーアイコンがクリックされたときにメニューの表示をトグル
@@ -80,11 +80,11 @@ const MenuIcon: React.FC = () => {
                 <div
                     style={{
                         position: 'absolute',
-                        top: '60px', // ハンバーガーアイコンの下に表示
+                        top: isMobileScreen ? '45px' : '60px', // ハンバーガーアイコンの下に表示
                         right: '0', // 右寄せ
                         backgroundColor: '#691C70',
                         color: '#FFFFFF',
-                        width: '250px',
+                        width: isMobileScreen ? '100px' : isSmallScreen ? '170px' : '250px',
                         border: '2px solid #691C70',
                         padding: '10px',
                         marginTop: "0",
@@ -97,40 +97,40 @@ const MenuIcon: React.FC = () => {
                             padding: '0', 
                             margin: '0', 
                             textAlign: 'left', 
-                            fontSize: '12pt', 
+                            fontSize: isMobileScreen ? '8pt' : isSmallScreen ? '10pt' : '12pt',
                             fontFamily: 'Noto Sans JP',
                             cursor: 'pointer',
                         }}
                     >
-                        <li style={{ padding: '10px 0', fontWeight: '600' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>
                             <Link to="/" style={{ color: '#FFFFFF', textDecoration: 'none' }}>Home</Link>
                         </li>
-                        <li style={{ padding: '10px 0', fontWeight: '600' }}>私たちについて</li>
-                        <li style={{ padding: '10px 0', paddingLeft: '25px' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>私たちについて</li>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
                             <Link to="/about/about_symbio" style={{ color: '#FFFFFF', textDecoration: 'none' }}>合成生物学とは</Link>
                         </li>
-                        <li style={{ padding: '10px 0', paddingLeft: '25px' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
                             <Link to="/about/about_iGEM" style={{ color: '#FFFFFF', textDecoration: 'none' }}>iGEMとは</Link>
                         </li>
-                        <li style={{ padding: '10px 0', paddingLeft: '25px' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
                             <Link to="/about/about_iGEM_TSUKUBA" style={{ color: '#FFFFFF', textDecoration: 'none' }}>iGEM TSUKUBAとは</Link>
                         </li>
-                        <li style={{ padding: '10px 0', paddingLeft: '25px' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
                             <Link to="/about/project" style={{ color: '#FFFFFF', textDecoration: 'none' }}>研究内容</Link>
                         </li>
-                        <li style={{ padding: '10px 0', paddingLeft: '25px' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
                             <Link to="/about/members" style={{ color: '#FFFFFF', textDecoration: 'none' }}>メンバー</Link>
                         </li>
-                        <li style={{ padding: '10px 0', paddingLeft: '25px' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', paddingLeft: isMobileScreen ? '10px' : '25px' }}>
                             <Link to="/about/log" style={{ color: '#FFFFFF', textDecoration: 'none' }}>活動記録</Link>
                         </li>
-                        <li style={{ padding: '10px 0', fontWeight: '600' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>
                             <Link to="/news" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ニュース</Link>
                         </li>
-                        <li style={{ padding: '10px 0', fontWeight: '600' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>
                             <Link to="/recruitment" style={{ color: '#FFFFFF', textDecoration: 'none' }}>メンバー募集</Link>
                         </li>
-                        <li style={{ padding: '10px 0', fontWeight: '600' }}>
+                        <li style={{ padding: isMobileScreen ? '6px 0' : '10px 0', fontWeight: '600' }}>
                         <Link to="/sponsorship" style={{ color: '#FFFFFF', textDecoration: 'none' }}>ご協賛のお願い</Link>
                         </li>
                     </ul>
