@@ -8,6 +8,7 @@ import Button from '../components/button/Button';
 import Banner from '../components/banner/Banner';
 import Image from '../components/image/Image';
 import Footer from '../components/footer/Footer';
+import { useScreenSizes } from '../components/WindowSizeUtils';
 
 // カルーセル用の変数設定
 const images = [
@@ -39,6 +40,7 @@ const buttons = [
 
 const Home: React.FC = () => {
 
+    const { isSmallScreen, isMobileScreen } = useScreenSizes();
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const [fade, setFade] = useState(true);
     const carouselInterval = 8000; // 画像の切り替え速度を8秒に設定
@@ -62,18 +64,22 @@ const Home: React.FC = () => {
                 <img 
                     src={`${process.env.PUBLIC_URL}/pages/Home/Cell.svg`} 
                     alt="iGEM TSUKUBAの写真" 
-                    style={{ marginLeft: "-100px", marginTop: "-100px" }} 
+                    style={{ 
+                        marginLeft: isMobileScreen ? "-50px" : isSmallScreen ? "-100px" : "-100px",
+                        marginTop: isMobileScreen ? "-50px" : isSmallScreen ? "-100px" : "-100px", 
+                        width: isMobileScreen ? "300px" : isSmallScreen ? "500px" : "669px",
+                        height: isMobileScreen ? "300px" : isSmallScreen ? "500px" : "693px",}} 
                 />
                 <img 
                     src={images[currentImageIndex]} 
                     alt="iGEM TSUKUBAの写真" 
                     style={{ 
                         position: "absolute", 
-                        top: "240px", 
-                        left: "233px", 
+                        top: isMobileScreen ? "105px" : isSmallScreen ? "160px" : "240px", 
+                        left: isMobileScreen ? "95px" : isSmallScreen ? "140px" : "233px", 
                         transform: "translate(-50%, -50%)", 
-                        width: "335px", 
-                        height: "335px", 
+                        width: isMobileScreen ? "145px" : isSmallScreen ? "250px" : "335px", 
+                        height: isMobileScreen ? "145px" : isSmallScreen ? "250px" : "335px", 
                         borderRadius: "50%", 
                         objectFit: "cover", 
                         border: "5px solid #691C70",
@@ -83,23 +89,28 @@ const Home: React.FC = () => {
                 />
                 <div style={{
                     position: "absolute",
-                    top: "50px",
-                    left: "500px",
-                    width: "50%",
+                    top: isMobileScreen ? "10px" : isSmallScreen ? "50px" : "50px", 
+                    left: isMobileScreen ? "200px" : isSmallScreen ? "300px" : "450px", 
+                    width: isMobileScreen ? "40%" : "50%",
                     height: "auto",
                     backgroundColor: "white",
-                    padding: "20px",
+                    padding: isMobileScreen ? "20px" : isSmallScreen ? "20px" : "20px", 
                     transition: "opacity 0.25s ease-in-out" // フェードイン・フェードアウトのアニメーション
                 }}>
-                    <p style={{fontFamily: "Noto Sans JP", fontSize: "16pt", lineHeight: 2}}>{texts[currentImageIndex]}</p>
-                    <div style={{display: "flex", justifyContent: "flex-start"}}>
+                    <p style={{
+                        fontFamily: "Noto Sans JP", 
+                        fontSize: isMobileScreen ? "10pt" : isSmallScreen ? "13pt" : "16pt", 
+                        lineHeight: isMobileScreen ? 1.3 : 2}}>
+                        {texts[currentImageIndex]}
+                    </p>
+                    <div style={{display: isMobileScreen ? "block" : "flex", justifyContent: "flex-start"}}>
                         {buttons[currentImageIndex].map((button, index) => (
                             <Button 
                                 key={index} 
                                 label={button.label} 
                                 textColor="#D20000" 
                                 link={button.link} 
-                                margin={index === 0 ? '20px 0 0 0' : '20px 0 0 20px'} 
+                                margin={index === 0 ? '20px 0 0 0' : isMobileScreen ? '20px 0 0 0' : '20px 0 0 20px'} 
                             />
                         ))}
                     </div>
@@ -107,28 +118,30 @@ const Home: React.FC = () => {
             </div>
             {/* ここまでカルーセル */}
             <Newsfeed />
-            <div style={{display: "flex", justifyContent: "center"}}>
-                <Banner 
-                    src="pages/Home/education.webp" 
-                    alt="Eduの写真" 
-                    text="我々iGEM TSUKUBAでは、合成生物学の魅力と実態を広めるための活動にも力を入れています。主に中高生を対象に、対面遠隔を問わず出張授業や実験教室などを複数回にわたって行いました。今後も教育普及活動の幅を広げながら、合成生物学の魅力を広め続けていきます。" 
-                    buttonLabel="詳しくはこちら" 
-                    buttonColor="#F59A23" 
-                    link="/about/log" />
-                <Banner 
-                    src="pages/Sponsership/cloudfinding.webp" 
-                    alt="Eduの写真" 
-                    text="2025年度大会への出場を目指している我々ですが、大会登録費や大会参加費、実験費などにより、常に金銭的な問題と隣り合わせです。そこで私たちの研究をより実りのあるものにするため、皆様からのご支援をいただきたいと考え、クラウドファンディングを始めました。暖かいご支援・ご協力何卒よろしくお願いいたします。" 
-                    buttonLabel="詳しくはこちら" 
-                    buttonColor="#007AFF" 
-                    link="/sponsorship" />
+            <div style={{display: isSmallScreen ? "block" : "flex", justifyContent: "center", marginLeft: "auto", marginRight: "auto"}}>
+                <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap', width: '100%'}}>
+                    <Banner 
+                        src="pages/Home/education.webp" 
+                        alt="Eduの写真" 
+                        text="我々iGEM TSUKUBAでは、合成生物学の魅力と実態を広めるための活動にも力を入れています。主に中高生を対象に、対面遠隔を問わず出張授業や実験教室などを複数回にわたって行いました。今後も教育普及活動の幅を広げながら、合成生物学の魅力を広め続けていきます。" 
+                        buttonLabel="詳しくはこちら" 
+                        buttonColor="#F59A23" 
+                        link="/about/log" />
+                    <Banner 
+                        src="pages/Sponsership/cloudfinding.webp" 
+                        alt="Eduの写真" 
+                        text="2025年度大会への出場を目指している我々ですが、大会登録費や大会参加費、実験費などにより、常に金銭的な問題と隣り合わせです。そこで私たちの研究をより実りのあるものにするため、皆様からのご支援をいただきたいと考え、クラウドファンディングを始めました。暖かいご支援・ご協力何卒よろしくお願いいたします。" 
+                        buttonLabel="詳しくはこちら" 
+                        buttonColor="#007AFF" 
+                        link="/sponsorship" />
+                    </div>
             </div>
 
             <hr style={{ border:"1px solid black", width: "80%" }} />
 
             <Title
                 text='好奇心旺盛な皆さんを募集しています！'/>
-            <div style={{marginLeft: "0%", marginRight: "0%", display: "flex", justifyContent: "center"}}>
+            <div style={{marginLeft: "0%", marginRight: "0%", display: "block" , justifyContent: "center"}}>
                 <div >
                     <Paragraph
                         text='　我々は研究活動に興味のある方や、合成生物学世界大会に参加するというロマンに惹かれる方を広く募集しております。'/>
@@ -154,7 +167,7 @@ const Home: React.FC = () => {
             <Paragraph
                 text='　そこで、私たちの研究活動を実りあるものにするために、みなさまからのご支援をいただきたいと考えこのクラウドファンディングを始めました。'/>
 
-            <div style={{ display: "flex", justifyContent: 'flex-start' }}>
+            <div style={{ display: isSmallScreen ? "block" :"flex", justifyContent: 'flex-start' }}>
                 <Button
                     label='もっと見る'
                     textColor='#007AFF'
@@ -166,13 +179,13 @@ const Home: React.FC = () => {
                     textColor='#691C70'
                     backgroundColor='#FFFFFF'
                     link='https://camp-fire.jp/projects/787804/view'
-                    margin="40px 20px 40px 20px"/>
+                    margin={isSmallScreen ? "40px 20px 40px 10%" : "40px 20px 40px 20px"}/>
                 <Button
                     label='お問い合わせはこちら'
                     textColor='#691C70'
                     backgroundColor='#FFFFFF'
                     link='mailto:igemtsukuba24@gmail.com'
-                    margin="40px 20px 40px 20px"/>
+                    margin={isSmallScreen ? "40px 20px 40px 10%" : "40px 20px 40px 20px"}/>
             </div>
             <Footer/>
         </div>
