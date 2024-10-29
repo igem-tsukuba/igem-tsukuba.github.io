@@ -1,4 +1,6 @@
 import React from "react";
+import { useScreenSizes } from "../WindowSizeUtils";
+
 
 type ImageProps = {
     src: string;
@@ -10,15 +12,23 @@ type ImageProps = {
     margin?: string;
 };
 
-const Image: React.FC<ImageProps> = ({ src, alt, caption, width = 280, height = 210, borderRadius = 15, margin ="30px 30px"}) => {
+const Image: React.FC<ImageProps> = ({ src, alt, caption, width = 280, height = 210, borderRadius = 15, margin = "30px 30px" }) => {
+    const { isSmallScreen, isMobileScreen } = useScreenSizes();
+    // 画面幅を取得
+    const screenWidth = window.innerWidth;
+    // 入力された幅が画面幅を超える場合は幅を画面幅の80%に設定
+    const adjustedWidth = width > screenWidth * 0.8 ? screenWidth * 0.8 : width;
+    // adjustedWidthがscreenWidth * 0.8のときはmarginを10%に設定
+    const adjustedMargin = adjustedWidth === screenWidth * 0.8 ? "10%" : margin;
+
     return (
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", }}>
-            <div style={{ width: width, textAlign: "center", margin: margin }}>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div style={{ width: adjustedWidth, textAlign: "center", margin: 0 }}>
                 <figure style={{ margin: 0 }}>
                     <img 
                         src={`${process.env.PUBLIC_URL}/${src}`} 
                         alt={alt} 
-                        width={width} 
+                        width={adjustedWidth} 
                         height={height} 
                         style={{ 
                             borderRadius: borderRadius, 
@@ -27,11 +37,11 @@ const Image: React.FC<ImageProps> = ({ src, alt, caption, width = 280, height = 
                             height: '100%' 
                         }} 
                     />
-                    <figcaption style={{ fontFamily: "Noto Sans JP", width: width, textAlign: "center" }}>{caption}</figcaption>
+                    <figcaption style={{ fontFamily: "Noto Sans JP", width: adjustedWidth, textAlign: "center", fontSize: isMobileScreen ? "8pt" : ""}}>{caption}</figcaption>
                 </figure>
             </div>
         </div>
     );
-}
+};
 
 export default Image;

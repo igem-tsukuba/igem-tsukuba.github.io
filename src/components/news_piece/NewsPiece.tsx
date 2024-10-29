@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Paragraph from "../paragraph/Paragraph";
 import Image from "../image/Image";
 import { getColorAndLabel } from './NewsControlUtils';
+import { useScreenSizes } from "../WindowSizeUtils";
 
 type NewsProps = {
   title: string;
@@ -14,6 +15,7 @@ type NewsProps = {
 };
 
 const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, pictureSrc, pictureAlt, topBar = "true" }) => {
+    const { isSmallScreen, isMobileScreen } = useScreenSizes();
 
     const { color, label } = getColorAndLabel(control);
 
@@ -44,7 +46,7 @@ const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, picture
                         style={{ 
                             fontFamily: "Noto Sans JP", 
                             fontWeight: "600", 
-                            fontSize: "24pt", 
+                            fontSize: isMobileScreen ? '18pt' : isSmallScreen ? '20pt' : '24pt',
                             width: "80%", 
                             whiteSpace: isContentVisible ? "normal" : "nowrap", 
                             overflow: isContentVisible ? "visible" : "hidden", 
@@ -55,10 +57,25 @@ const NewsPiece: React.FC<NewsProps> = ({ title, date, control, content, picture
                     >
                         {title}
                     </h1>
-                    <div style={{ backgroundColor: color, width: "75px", height: "30px", padding: "5px 5px", borderRadius: "10px", marginRight: "10px", display: "flex", justifyContent: "center" }}>
-                        <p style={{ color: "white", fontFamily: "Noto Sans JP", fontWeight: "600", fontSize: "14pt", margin: 0 }}>{label}</p>
+                    <div style={{ 
+                        backgroundColor: color, 
+                        width: isMobileScreen ? '70px' : isSmallScreen ? '75px' : '100px',
+                        height: isMobileScreen ? '20px' : isSmallScreen ? '20px' : '30px',
+                        padding: "5px 5px", 
+                        borderRadius: "10px", 
+                        marginRight: "10px", 
+                        display: "flex", 
+                        justifyContent: "center" }}>
+                        <p style={{ 
+                            color: "white", 
+                            fontFamily: "Noto Sans JP", 
+                            fontWeight: "600", 
+                            fontSize: isMobileScreen ? '8pt' : isSmallScreen ? '10pt' : '14pt',
+                            margin: 0 }}>
+                            {label}
+                        </p>
                     </div>
-                    <h2 style={{ fontFamily: "Noto Sans JP", fontWeight: "500", fontSize: "12pt" }}>{date}</h2>
+                    <h2 style={{ fontFamily: "Noto Sans JP", fontWeight: "500", fontSize: isMobileScreen ? '8pt' : isSmallScreen ? '10pt' : '14pt', }}>{date}</h2>
                 </div>
                 {isContentVisible && (
                     <>
