@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutIGEM from './pages/about_us/About_iGEM';
 import AboutSymBio from './pages/about_us/About_symbio';
@@ -15,7 +15,7 @@ import EducationRequest from './pages/Education_request';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <BrowserRouter basename='/'>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about/about_iGEM" element={<AboutIGEM />} />
@@ -30,7 +30,7 @@ const App: React.FC = () => {
           <Route path="/sponsorship" element={<Sponsorship />} />
           <Route path="/education_request" element={<EducationRequest />} />
         </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
 
