@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useScreenSizes } from '../WindowSizeUtils';
 
 type SmallTabProps = {
     label: string;
@@ -19,6 +20,7 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const [hoveredTab, setHoveredTab] = useState<number | null>(null);
+    const { isSmallScreen, isMobileScreen } = useScreenSizes();
 
     const handleMouseEnter = () => {
         setIsOpen(true);
@@ -45,10 +47,11 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
             <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ position: 'relative' }}>
                 <Link to={bigTabURL} style={{ backgroundColor: "white", textDecoration: "none"}}>
                     <div style={{
+                        display: isMobileScreen ? "none" : "block",
                         backgroundColor: isHovered ? categoryColor : "white",
-                        width: "240px",
-                        height: "80px",
-                        borderBottom: `10px solid ${categoryColor}`,
+                        width: isSmallScreen ? "120px" : "240px",
+                        height: isSmallScreen ? "40px" : "80px",
+                        borderBottom: isSmallScreen ? `5px solid ${categoryColor}` : `10px solid ${categoryColor}`,
                         borderTop: "none",
                         borderLeft: "none",
                         borderRight: "none",
@@ -58,7 +61,7 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
                             color: isHovered ? "white" : "black",
                             fontFamily: "Noto Sans JP",
                             fontWeight: "600",
-                            fontSize: "24pt",
+                            fontSize: isMobileScreen ? "8pt" : isSmallScreen ? "12pt" : "24pt",
                             margin: "0px"
                             }}>
                             {bigTabName_ja}
@@ -67,7 +70,7 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
                             color: isHovered ? "white" : "black",
                             fontFamily: "Noto Sans JP",
                             fontWeight: "600",
-                            fontSize: "16pt",
+                            fontSize: isMobileScreen ? "6pt" : isSmallScreen ? "8pt" : "16pt",
                             margin: "0px"
                         }}>
                             {bigTabName_en}
@@ -81,34 +84,35 @@ const HeaderMiniMenu: React.FC<HeaderMiniMenuProps> = ({ categoryColor, bigTabNa
     return (
         <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} style={{ position: 'relative' }}>
             <div style={{
-                backgroundColor: isHovered ? categoryColor : "white",
-                width: "240px",
-                height: "80px",
-                borderBottom: `10px solid ${categoryColor}`,
-                borderLeft: "none",
-                borderRight: "none",
-                borderTop: "none",
-                textAlign: "center",
-                }}>
-            <p style={{
-                color: isHovered ? "white" : "black",
-                fontFamily: "Noto Sans JP",
-                fontWeight: "600",
-                fontSize: "24pt",
-                margin: "0px"
-                }}>
-                {bigTabName_ja}
-            </p>
-            <p style={{
-                color: isHovered ? "white" : "black",
-                fontFamily: "Noto Sans JP",
-                fontWeight: "600",
-                fontSize: "16pt",
-                margin: "0px"
-            }}>
-                {bigTabName_en}
-            </p>
-            </div>
+                        display: isMobileScreen ? "none" : "block",
+                        backgroundColor: isHovered ? categoryColor : "white",
+                        width: isSmallScreen ? "120px" : "240px",
+                        height: isSmallScreen ? "40px" : "80px",
+                        borderBottom: isSmallScreen ? `5px solid ${categoryColor}` : `10px solid ${categoryColor}`,
+                        borderTop: "none",
+                        borderLeft: "none",
+                        borderRight: "none",
+                        textAlign: "center",
+                        }}>
+                        <p style={{
+                            color: isHovered ? "white" : "black",
+                            fontFamily: "Noto Sans JP",
+                            fontWeight: "600",
+                            fontSize: isMobileScreen ? "8pt" : isSmallScreen ? "12pt" : "24pt",
+                            margin: "0px"
+                            }}>
+                            {bigTabName_ja}
+                        </p>
+                        <p style={{
+                            color: isHovered ? "white" : "black",
+                            fontFamily: "Noto Sans JP",
+                            fontWeight: "600",
+                            fontSize: isMobileScreen ? "6pt" : isSmallScreen ? "8pt" : "16pt",
+                            margin: "0px"
+                        }}>
+                            {bigTabName_en}
+                        </p>
+                    </div>
             {isOpen && (
                 <div style={{ position: 'absolute', top: '100%', left: 0, zIndex: 1000 }}>
                     {smallTab.map((tab, index) => (
