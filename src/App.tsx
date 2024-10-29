@@ -10,7 +10,8 @@ import Log from './pages/about_us/Log';
 import Members from './pages/about_us/Members';
 import News from './pages/News';
 import Recruitment from './pages/Recruitment';
-import Sponsorship from './pages/Sponsorship'
+import Sponsorship from './pages/Sponsorship';
+import EducationRequest from './pages/Education_request';
 
 const App: React.FC = () => {
   return (
@@ -26,7 +27,8 @@ const App: React.FC = () => {
           <Route path="/about/members" element={<Members />} />
           <Route path="/news" element={<News />} />
           <Route path="/recruitment" element={<Recruitment />} />
-          <Route path="/Sponsorship" element={<Sponsorship />} />
+          <Route path="/sponsorship" element={<Sponsorship />} />
+          <Route path="/education_request" element={<EducationRequest />} />
         </Routes>
     </Router>
   );
