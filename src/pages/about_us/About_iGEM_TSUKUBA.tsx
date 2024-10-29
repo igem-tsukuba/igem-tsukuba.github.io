@@ -36,19 +36,19 @@ const AboutIGEMTSUKUBA: React.FC = () => {
                 text='メンバー概要'/>
             <Paragraph
                 text='　現在iGEM TSUKUBAは生物学類以外にも生物資源学類、化学類、工学システム学類など様々な分野を専攻する学生で構成されています。これによって、多方面からの意見を取り入れ活動しています。合成生物学という分野の特性上、生物学類の人数は多いですが、着実に活動の幅を広げています。'/>
-            <div style={{display: "flex", justifyContent: "center"}}>
+            <div style={{display: "flex", justifyContent: "start" }}>
             <Button
                 label='メンバー紹介はこちら'
                 textColor='#D20000'
                 backgroundColor='#FFFFFF'
                 link='/about/members'
-                margin="40px 20px 40px 10%"/>
+                margin="20px 0px 20px 10%"/>
             <Button
                 label='2023年度の研究テーマはこちら'
                 textColor='#D20000'
                 backgroundColor='#FFFFFF'
                 link='/about/project'
-                margin="40px 500px 40px 20px"/>
+                margin="20px 0px 20px 20px"/>
             </div>
             
             <Subtitle

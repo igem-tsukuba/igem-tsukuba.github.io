@@ -15,26 +15,26 @@ const AboutIGEM: React.FC = () => {
                 pageTitle='活動記録'/>
             <Title
                 text='これまでの活動実績'/>
+
+            <Subtitle
+                text='2024/10/29　新規Webページ公開'/>
+            <Paragraph
+                text='新しいWebページを公開しました。\r\n今後ともiGEM TSUKUBAをよろしくお願いいたします。'/>
             
             <Subtitle
-                text='東洋大学京北高等学校でのeducation'/>
+                text='2024/10/23　東洋大学京北高等学校でのeducation'/>
             <Paragraph
                 text='京北高校の生徒さんに対してeducationを行いました。\r\nピペットマンの詳細な使用方法などについて講義させていただきました。'/>
 
             <Subtitle
-                text='埼玉県立越谷北高校でのeducation'/>
+                text='2024/10/22　埼玉県立越谷北高校でのeducation'/>
             <Paragraph
                 text='越谷北高校の生徒さんに対してeducationを行いました。\r\n生徒さんのテーマに対してアドバイス等を行い、研究活動のお手伝いをさせていただきました。'/>
             
             <Subtitle
-                text='クラウドファンディング公開'/>
+                text='2024/10/21　クラウドファンディング公開'/>
             <Paragraph
                 text='クラウドファンディングを公開しました。\r\n皆様のご支援お待ちしております。'/>
-                
-            <Subtitle
-                text='新規Webページ公開'/>
-            <Paragraph
-                text='新しいWebページを公開しました。\r\n今後ともiGEM TSUKUBAをよろしくお願いいたします。'/>
             
             <Button
                 label='Newsはこちら'
