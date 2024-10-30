@@ -15,7 +15,7 @@ import EducationRequest from './pages/Education_request';
 
 const App: React.FC = () => {
   return (
-    <BrowserRouter basename='/igem-tsukuba.github.io'>
+    <Router>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about/about_iGEM" element={<AboutIGEM />} />
@@ -30,7 +30,7 @@ const App: React.FC = () => {
           <Route path="/sponsorship" element={<Sponsorship />} />
           <Route path="/education_request" element={<EducationRequest />} />
         </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
