@@ -13,13 +13,11 @@ type ImageProps = {
 };
 
 const Image: React.FC<ImageProps> = ({ src, alt, caption, width = 280, height = 210, borderRadius = 15, margin = "30px 30px" }) => {
-    const { isSmallScreen, isMobileScreen } = useScreenSizes();
+    const { isMobileScreen } = useScreenSizes();
     // 画面幅を取得
     const screenWidth = window.innerWidth;
     // 入力された幅が画面幅を超える場合は幅を画面幅の80%に設定
     const adjustedWidth = width > screenWidth * 0.8 ? screenWidth * 0.8 : width;
-    // adjustedWidthがscreenWidth * 0.8のときはmarginを10%に設定
-    const adjustedMargin = adjustedWidth === screenWidth * 0.8 ? "10%" : margin;
 
     return (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>

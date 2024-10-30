@@ -1,6 +1,5 @@
 import React from 'react';
 import UpperHeader from '../../components/header/UpperHeader';
-import Menu_Icon from '../../components/menu_icon/Menu_Icon';
 import Footer from '../../components/footer/Footer';
 import Header from '../../components/header/Header';
 import Subtitle from '../../components/subtitle/Subtitle';
